@@ -1,10 +1,12 @@
 header#main-header {
   background-color: #6085e9;
+  position: relative;
+  overflow: hidden;
 
   .title {
-    padding: 5rem 5rem;
+    padding: 3rem;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: #fff;
   }
 
