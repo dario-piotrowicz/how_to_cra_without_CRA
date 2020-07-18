@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Sora', sans-serif;
+}
+
+.centering-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-left: 2px dashed black; // just for dev, to be removed later
+  border-right: 2px dashed black; // just for dev, to be removed later
+}

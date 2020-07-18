@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 
-const Root = () => {
+const Root: FunctionComponent = () => {
   return <App />;
 };
 

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import './app.scss';
+import Header from './components/header/header.component';
 
-const App = () => {
-  return <></>;
+const App: FunctionComponent = () => {
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default App;

@@ -1,0 +1,36 @@
+header#main-header {
+  background-color: #6085e9;
+
+  .title {
+    padding: 5rem 5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+
+  .centering-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .github-icon-container {
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #333;
+    position: absolute;
+    top: -5rem;
+    right: -5rem;
+    transform: rotate(45deg);
+
+    .icon {
+      font-size: 2.3rem;
+      display: inline-block;
+      color: #fff;
+      padding: 0 0 0.1rem 1rem;
+      transform: rotate(-45deg);
+    }
+  }
+}
