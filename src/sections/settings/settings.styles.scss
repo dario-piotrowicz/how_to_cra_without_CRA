@@ -1,0 +1,56 @@
+section#settings {
+  margin-top: 2rem;
+  .title {
+    margin: 1rem;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .switch-toggle {
+      margin: 1rem;
+
+      button {
+        font-size: 0.9rem;
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid black;
+        color: #f0f0f0;
+        background-color: #333;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s;
+
+        &:first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        &.selected {
+          background-color: #6085e9;
+          cursor: default;
+        }
+
+        &:hover:not(.selected) {
+          background-color: #2f3852;
+        }
+      }
+    }
+
+    label {
+      padding: 0.5rem;
+
+      span {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
