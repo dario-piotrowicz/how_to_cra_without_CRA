@@ -54,7 +54,7 @@ const Settings: FunctionComponent = () => {
             yarn
           </button>
         </div>
-        <label>
+        <label className="checkbox">
           <input
             type="checkbox"
             checked={esLint}
@@ -62,7 +62,7 @@ const Settings: FunctionComponent = () => {
           />
           <span>esLint</span>
         </label>
-        <label>
+        <label className="checkbox">
           <input
             type="checkbox"
             checked={prettier}

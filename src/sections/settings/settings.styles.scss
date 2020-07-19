@@ -45,12 +45,12 @@ section#settings {
     }
 
     @import url('src/assets/external-styles/fontawesome.min.css');
-    label {
+    label.checkbox {
       cursor: pointer;
       margin: 0.5rem;
       font-size: 1.5rem;
 
-      input[type='checkbox'] {
+      input {
         display: none;
 
         & + span:before {
