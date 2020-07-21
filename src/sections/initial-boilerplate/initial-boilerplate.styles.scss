@@ -1,0 +1,21 @@
+section#initial-boilerplate {
+  margin-top: 3rem;
+  background-color: rgb(222, 222, 250);
+  transform: skewY(-5deg);
+
+  .centering-container {
+    transform: skewY(5deg);
+    padding: 2rem 1rem;
+
+    .title {
+      font-size: 1.65rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cli-command {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

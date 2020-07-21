@@ -1,0 +1,15 @@
+@import '../../common/scss/mixins.scss';
+
+.cli-command {
+  $text-color: #33ff00;
+  background-color: #333;
+  color: $text-color;
+  border-radius: 5px;
+  margin: 0.5rem 3rem;
+
+  .prompt {
+    color: $text-color;
+    opacity: 0.5;
+    @include non-selectable();
+  }
+}
