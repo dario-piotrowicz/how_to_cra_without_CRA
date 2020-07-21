@@ -1,3 +1,5 @@
+@import './common/scss/utility.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -21,29 +23,4 @@ label {
 p {
   margin: 0.5rem 1rem;
   padding: 0.5rem;
-}
-
-.centering-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  border-left: 2px dashed black; // just for dev, to be removed later
-  border-right: 2px dashed black; // just for dev, to be removed later
-  box-sizing: border-box;
-}
-
-.btn {
-  font-size: 0.9rem;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #6085e9;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-  outline: none;
-  transition: background-color 0.5s;
-
-  &:hover {
-    background-color: lighten(#6085e9, 5%);
-  }
 }
