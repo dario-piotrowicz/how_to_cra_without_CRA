@@ -1,5 +1,7 @@
+@import '../../common/scss/constants.scss';
+
 header#main-header {
-  background-color: #6085e9;
+  background-color: $color-primary;
   position: relative;
   overflow: hidden;
 
@@ -21,7 +23,7 @@ header#main-header {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background-color: #333;
+    background-color: $color-dark-background;
     position: absolute;
     top: -5rem;
     right: -5rem;

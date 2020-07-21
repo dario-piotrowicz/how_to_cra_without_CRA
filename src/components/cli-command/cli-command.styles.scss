@@ -1,8 +1,9 @@
 @import '../../common/scss/mixins.scss';
+@import '../../common/scss/constants.scss';
 
 .cli-command {
   $text-color: #33ff00;
-  background-color: #333;
+  background-color: $color-dark-background;
   color: $text-color;
   border-radius: 5px;
   margin: 0.5rem 3rem;

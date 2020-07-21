@@ -1,3 +1,5 @@
+@import '../../common/scss/constants.scss';
+
 section#settings {
   padding-top: 2rem;
   .title {
@@ -19,7 +21,7 @@ section#settings {
         border-radius: 5px;
         border: 1px solid black;
         color: #f0f0f0;
-        background-color: #333;
+        background-color: $color-dark-background;
         padding: 0.5rem 1rem;
         transition: background-color 0.2s;
 
@@ -34,7 +36,7 @@ section#settings {
         }
 
         &.selected {
-          background-color: #6085e9;
+          background-color: $color-primary;
           cursor: default;
         }
 
@@ -61,7 +63,7 @@ section#settings {
         }
 
         &:checked + span:before {
-          color: #6085e9;
+          color: $color-primary;
           content: '\f14a';
           animation: tick 180ms ease-in;
         }
