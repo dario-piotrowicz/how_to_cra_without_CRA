@@ -5,9 +5,9 @@ export interface SettingsStateType {
   prettier: boolean;
 }
 
-export const settingsActionTypes = {
-  SET_NPM: 'SET_NPM',
-  SET_YARN: 'SET_YARN',
-  SET_ESLINT: 'SET_ESLINT',
-  SET_PRETTIER: 'SET_PRETTIER',
-};
+export enum settingsActionTypes {
+  SET_NPM = 'SET_NPM',
+  SET_YARN = 'SET_YARN',
+  SET_ESLINT = 'SET_ESLINT',
+  SET_PRETTIER = 'SET_PRETTIER',
+}
