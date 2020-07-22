@@ -1,0 +1,47 @@
+section#webpack-babel-setup {
+  // margin-top: 3rem;
+  background-color: #f16464;
+  transform: skewY(-5deg);
+  z-index: 1;
+  .centering-container {
+    transform: skewY(5deg);
+    padding: 2rem 1rem;
+    padding-bottom: 3rem;
+
+    .title-container {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        font-size: 3rem;
+        margin: 0 2rem;
+
+        &.webpack {
+          color: #5299c8;
+        }
+
+        &.babel {
+          color: #f9dc3e;
+        }
+      }
+      .title {
+        font-size: 1.65rem;
+        text-align: center;
+      }
+    }
+
+    .cli-command {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding: 0rem 5rem;
+
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
