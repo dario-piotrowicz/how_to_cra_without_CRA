@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
+    "start-lan": "webpack-dev-server --mode development --host 0.0.0.0",
     "build": "webpack --mode production"
   },
   "dependencies": {
