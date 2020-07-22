@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import './header.styles.scss';
 import { Icon } from '@iconify/react';
-import mozillafirefoxIcon from '@iconify/icons-simple-icons/github';
+import githubIcon from '@iconify/icons-simple-icons/github';
 
 const Header: FunctionComponent = () => {
   return (
@@ -16,7 +16,7 @@ const Header: FunctionComponent = () => {
         </h1>
         <div className="github-icon-container">
           <span className="icon">
-            <Icon icon={mozillafirefoxIcon} />
+            <Icon icon={githubIcon} />
           </span>
         </div>
       </div>
