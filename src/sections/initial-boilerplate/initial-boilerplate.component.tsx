@@ -43,11 +43,11 @@ const InitialBoilerplateSection: FunctionComponent = () => {
     <section id="initial-boilerplate">
       <div className="centering-container">
         <div className="title-container">
-          <span className="icon webpack">
+          <span className="icon">
             <Icon icon={reactIcon} />
           </span>
           <h2 className="title">Creating an initial boilerplate</h2>
-          <span className="icon webpack">
+          <span className="icon">
             <Icon icon={reactIcon} />
           </span>
         </div>
