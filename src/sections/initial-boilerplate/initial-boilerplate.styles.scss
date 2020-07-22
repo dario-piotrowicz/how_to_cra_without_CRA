@@ -8,10 +8,20 @@ section#initial-boilerplate {
     padding: 2rem 1rem;
     padding-bottom: 3rem;
 
-    .title {
-      font-size: 1.65rem;
+    .title-container {
       padding: 2rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        font-size: 3rem;
+        margin: 0 2rem;
+        color: darken(#61dafb, 20%);
+      }
+      .title {
+        font-size: 1.65rem;
+        text-align: center;
+      }
     }
 
     .cli-command {

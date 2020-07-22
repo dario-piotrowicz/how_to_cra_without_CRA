@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react';
 import './initial-boilerplate.styles.scss';
 import { useSelector } from 'react-redux';
 import { selectNpm } from '../../redux/settings/settings.selectors';
+import { Icon } from '@iconify/react';
+import reactIcon from '@iconify/icons-simple-icons/react';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import CodeSnippet from '../../components/code-snippet/code-snippet.component';
 
@@ -40,7 +42,15 @@ const InitialBoilerplateSection: FunctionComponent = () => {
   return (
     <section id="initial-boilerplate">
       <div className="centering-container">
-        <h2 className="title">Creating an initial boilerplate</h2>
+        <div className="title-container">
+          <span className="icon webpack">
+            <Icon icon={reactIcon} />
+          </span>
+          <h2 className="title">Creating an initial boilerplate</h2>
+          <span className="icon webpack">
+            <Icon icon={reactIcon} />
+          </span>
+        </div>
         <p>
           To start creating our project we will first need a very basic react
           application to use as a framework which we can use to test our
