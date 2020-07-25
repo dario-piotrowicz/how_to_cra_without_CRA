@@ -1,0 +1,21 @@
+section#run-app {
+  background-color: #bcf0c7;
+  transform: skewY(-5deg);
+  z-index: 1;
+  .centering-container {
+    transform: skewY(5deg);
+    padding: 2rem 1rem;
+    padding-bottom: 3rem;
+
+    .title {
+      padding: 2rem;
+      font-size: 1.65rem;
+      text-align: center;
+    }
+
+    .cli-command {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
