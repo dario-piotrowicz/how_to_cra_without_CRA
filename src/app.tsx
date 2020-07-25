@@ -6,6 +6,7 @@ import Settings from './sections/settings/settings.component';
 import InitialBoilerplateSection from './sections/initial-boilerplate/initial-boilerplate.component';
 import WebPackBabelSetupSection from './sections/webpack-babel-setup/webpack-babel-setup.component';
 import RunAppSection from './sections/run-app/run-app.component';
+import CssSetupSection from './sections/css-setup/css-setup.component';
 
 const App: FunctionComponent = () => {
   return (
@@ -16,6 +17,7 @@ const App: FunctionComponent = () => {
       <InitialBoilerplateSection />
       <WebPackBabelSetupSection />
       <RunAppSection />
+      <CssSetupSection />
     </>
   );
 };
