@@ -5,7 +5,9 @@ import cssIcon from '@iconify/icons-simple-icons/css3';
 import sassIcon from '@iconify/icons-simple-icons/sass';
 import { useSelector } from 'react-redux';
 import { selectSass, selectNpm } from '../../redux/settings/settings.selectors';
-import CodeSnippet from '../../components/code-snippet/code-snippet.component';
+import CodeSnippet, {
+  CodeSnippetLanguage,
+} from '../../components/code-snippet/code-snippet.component';
 import CliCommand from '../../components/cli-command/cli-command.component';
 
 const appJsCode = `import React from 'react';
@@ -90,9 +92,12 @@ const CssSetupSection: FunctionComponent = () => {
         <p>
           Based on the basic <em>index.js</em> file I used in the first section
           I would define the app file as such:
-          <CodeSnippet code={appJsCode} />
+          <CodeSnippet code={appJsCode} lang={CodeSnippetLanguage.JS} />
           And then update the index file as follows:
-          <CodeSnippet code={updatedIndexJsCode} />
+          <CodeSnippet
+            code={updatedIndexJsCode}
+            lang={CodeSnippetLanguage.JS}
+          />
           After making the changes make sure everything still works as it did
           before.
         </p>
@@ -105,13 +110,16 @@ const CssSetupSection: FunctionComponent = () => {
           In our code for example we may want to see the <em>h1</em> text red,
           so in the <em>src</em> directory let's create the following
           <strong> app.css</strong> {sass ? '(or /.scss) ' : ''} file:
-          <CodeSnippet code={appCssCode} />
+          <CodeSnippet code={appCssCode} lang={CodeSnippetLanguage.CSS} />
         </p>
         <p>
           To make use of the newly created css file we need to import it, so in
           the <em>app.js</em> imports section let's add a new import for the css
           file:
-          <CodeSnippet code={appJSimportAppCssCode} />
+          <CodeSnippet
+            code={appJSimportAppCssCode}
+            lang={CodeSnippetLanguage.JS}
+          />
         </p>
         <p>
           At this point you can notice that webpack is no longer be able to
@@ -131,7 +139,10 @@ const CssSetupSection: FunctionComponent = () => {
           Then we can update the <em>webpack.config.js</em> by instructing it on
           how to handle css {sass ? 'and sass/scss' : ''} files, to do so, in
           the rules array add the following entry:
-          <CodeSnippet code={webpackConfigStylesRulesCode} />
+          <CodeSnippet
+            code={webpackConfigStylesRulesCode}
+            lang={CodeSnippetLanguage.JS}
+          />
         </p>
         <p>
           Now if you try running your dev server again you should see it working

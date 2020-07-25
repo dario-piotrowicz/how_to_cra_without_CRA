@@ -5,7 +5,9 @@ import { selectNpm } from '../../redux/settings/settings.selectors';
 import { Icon } from '@iconify/react';
 import reactIcon from '@iconify/icons-simple-icons/react';
 import CliCommand from '../../components/cli-command/cli-command.component';
-import CodeSnippet from '../../components/code-snippet/code-snippet.component';
+import CodeSnippet, {
+  CodeSnippetLanguage,
+} from '../../components/code-snippet/code-snippet.component';
 
 const indexHtmlCode = `<!DOCTYPE html>
 <html lang="en">
@@ -93,13 +95,13 @@ const InitialBoilerplateSection: FunctionComponent = () => {
           us).
         </p>
         <p>The basic one I use is:</p>
-        <CodeSnippet code={indexHtmlCode} />
+        <CodeSnippet code={indexHtmlCode} lang={CodeSnippetLanguage.HTML} />
         <p>
           Next inside the <strong>src</strong> directory we need an
           <strong> index.js</strong> which implements a very basic react
           application and injects it in out root div, something like:
         </p>
-        <CodeSnippet code={indexJsCode} />
+        <CodeSnippet code={indexJsCode} lang={CodeSnippetLanguage.JS} />
         <p>
           With this we have our basic react application ready to be executed,
           naturally now there is no way to actually execute the application,

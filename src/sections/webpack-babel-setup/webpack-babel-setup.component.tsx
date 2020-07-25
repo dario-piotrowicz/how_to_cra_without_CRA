@@ -6,7 +6,9 @@ import webPackIcon from '@iconify/icons-simple-icons/webpack';
 import babelIcon from '@iconify/icons-simple-icons/babel';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import { selectNpm } from '../../redux/settings/settings.selectors';
-import CodeSnippet from '../../components/code-snippet/code-snippet.component';
+import CodeSnippet, {
+  CodeSnippetLanguage,
+} from '../../components/code-snippet/code-snippet.component';
 
 const babelRcCode = `{
   "presets": [
@@ -93,7 +95,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           simple. All you need to do is creating the <strong>.babelrc</strong>{' '}
           file in your root directory and inside of it indicate the presets
           we've just installed, as follow:
-          <CodeSnippet code={babelRcCode} />
+          <CodeSnippet code={babelRcCode} lang={CodeSnippetLanguage.JS} />
         </p>
         <p>
           And then we move to webpack's configuration, again all you need is a
@@ -103,7 +105,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
         <p>
           This file does configuration file contains much much more that babel's
           one, the code you will need here is:
-          <CodeSnippet code={webpackConfigCode} />
+          <CodeSnippet code={webpackConfigCode} lang={CodeSnippetLanguage.JS} />
         </p>
         <p>
           What the (nodejs) code does is to export a module containing your

@@ -3,7 +3,9 @@ import './run-app.styles.scss';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import { useSelector } from 'react-redux';
 import { selectNpm } from '../../redux/settings/settings.selectors';
-import CodeSnippet from '../../components/code-snippet/code-snippet.component';
+import CodeSnippet, {
+  CodeSnippetLanguage,
+} from '../../components/code-snippet/code-snippet.component';
 
 const packageJsonScriptsCode = `"scripts": {
   "start": "webpack-dev-server --mode development --open",
@@ -54,7 +56,10 @@ const RunAppSection: FunctionComponent = () => {
         <p>
           Your can add the following scripts section to your package.json file
         </p>
-        <CodeSnippet code={packageJsonScriptsCode} />
+        <CodeSnippet
+          code={packageJsonScriptsCode}
+          lang={CodeSnippetLanguage.JS}
+        />
         <p>
           The first one simply starts the dev server whilst also opening your
           default browser to the correct location (and sets the mode to
