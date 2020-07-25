@@ -3,6 +3,7 @@ import './settings.styles.scss';
 import {
   selectNpm,
   selectYarn,
+  selectSass,
   selectEsLint,
   selectPrettier,
 } from '../../redux/settings/settings.selectors';
@@ -10,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setNpm,
   setYarn,
+  setSass,
   setEsLint,
   setPrettier,
 } from '../../redux/settings/settings.actions';
@@ -17,6 +19,7 @@ import {
 const Settings: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
   const yarn = useSelector(selectYarn);
+  const sass = useSelector(selectSass);
   const esLint = useSelector(selectEsLint);
   const prettier = useSelector(selectPrettier);
 
@@ -54,6 +57,14 @@ const Settings: FunctionComponent = () => {
             yarn
           </button>
         </div>
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={sass}
+            onClick={() => dispatch(setSass(!sass))}
+          />
+          <span>Sass</span>
+        </label>
         <label className="checkbox">
           <input
             type="checkbox"
