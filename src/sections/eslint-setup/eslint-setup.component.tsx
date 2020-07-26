@@ -32,7 +32,7 @@ const eslintrcCode = `{
 const addEsLintLoaderToWebpackConfigCode = `{
   test: /\.(js|jsx)$/,
   exclude: /node_modules/,
-  use: ['babel-loader', 'eslint-loader'],
+  use: ['babel-loader', 'eslint-loader']
 },`;
 
 const EsLintSetupSection: FunctionComponent = () => {
@@ -99,6 +99,26 @@ const EsLintSetupSection: FunctionComponent = () => {
             lang={CodeSnippetLanguage.JS}
           />
         </p>
+        <p>
+          Now whenever you run your dev server or try to build your application
+          you will see warnings or straight out compilation errors accordingly
+          to the rules you've set in the ESLint configuration file.
+        </p>
+        <p>
+          It is also worth mentioning that if you're using a popular IDE chances
+          are that some sort of ESLint extension is available to it.
+          <br />
+          For example I use VSCode, for it there is a very good ESLint extension
+          which provides you with warnings directly in your code editor whenever
+          some of your code does not respect some of the rules you specified in
+          your configuration.
+        </p>
+        <div className="img-container">
+          <img
+            src="/assets/images/ESLintVSCode.png"
+            alt="VSCode ESLint Extension"
+          />
+        </div>
       </div>
     </section>
   );
