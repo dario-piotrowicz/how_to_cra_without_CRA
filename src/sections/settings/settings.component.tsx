@@ -61,7 +61,7 @@ const Settings: FunctionComponent = () => {
           <input
             type="checkbox"
             checked={sass}
-            onClick={() => dispatch(setSass(!sass))}
+            onChange={() => dispatch(setSass(!sass))}
           />
           <span>Sass</span>
         </label>
@@ -69,7 +69,7 @@ const Settings: FunctionComponent = () => {
           <input
             type="checkbox"
             checked={esLint}
-            onClick={() => dispatch(setEsLint(!esLint))}
+            onChange={() => dispatch(setEsLint(!esLint))}
           />
           <span>esLint</span>
         </label>
@@ -77,7 +77,7 @@ const Settings: FunctionComponent = () => {
           <input
             type="checkbox"
             checked={prettier}
-            onClick={() => dispatch(setPrettier(!prettier))}
+            onChange={() => dispatch(setPrettier(!prettier))}
           />
           <span>Prettier</span>
         </label>
