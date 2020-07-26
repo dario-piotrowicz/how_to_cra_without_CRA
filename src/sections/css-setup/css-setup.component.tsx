@@ -60,7 +60,7 @@ const CssSetupSection: FunctionComponent = () => {
           <span className="icon css">
             <Icon icon={cssIcon} />
           </span>
-          <h2 className="title">CSS{sass ? '/Sass' : ''} Setup</h2>
+          <h2 className="title">CSS{sass ? ' & Sass' : ''} Setup</h2>
           <span className={`icon ${sass ? 'sass' : 'css'}`}>
             <Icon icon={sass ? sassIcon : cssIcon} />
           </span>
