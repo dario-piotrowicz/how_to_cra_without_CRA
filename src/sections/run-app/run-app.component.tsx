@@ -32,7 +32,9 @@ const RunAppSection: FunctionComponent = () => {
           Now that we've set up both webpack and babel we're ready to start our
           application, you should be able to start the application by running
           the following command:
-          <CliCommand command={startDevServerCommand} />
+        </p>
+        <CliCommand command={startDevServerCommand} />
+        <p>
           The command should succeed and tell you where the project is running
           at ( by default should be <em>http://localhost:8080</em> ).
         </p>
@@ -46,8 +48,8 @@ const RunAppSection: FunctionComponent = () => {
           When it's time to deploy you will also need to build your application
           so that you can put your webserver with the static files needed to run
           the application, you can build your application by running:
-          <CliCommand command={buildAppCommand} />
         </p>
+        <CliCommand command={buildAppCommand} />
         <p>
           For convenience you should add specific scripts to your
           <strong> package.json</strong> file so that you have easier commands
@@ -75,12 +77,12 @@ const RunAppSection: FunctionComponent = () => {
         <p>
           With these scripts in place you can start your application locally by
           simply running:
-          <CliCommand command={startCommand} />
-          Build it with:
-          <CliCommand command={buildCommand} />
-          And running it, shared in your LAN with:
-          <CliCommand command={startLanCommand} />
         </p>
+        <CliCommand command={startCommand} />
+        <p>Build it with:</p>
+        <CliCommand command={buildCommand} />
+        <p>And running it, shared in your LAN with:</p>
+        <CliCommand command={startLanCommand} />
       </div>
     </section>
   );

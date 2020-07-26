@@ -76,16 +76,16 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           <strong>webpack-cli</strong> and
           <strong> webpack-dev-server</strong> packages, those can be installed
           with the following command:
-          <CliCommand command={webpackInstallsCommand} />
         </p>
+        <CliCommand command={webpackInstallsCommand} />
         <p>
           Next we need the <strong>@babel/core</strong>,
           <strong> @babel/preset-env</strong>,
           <strong> @babel/preset-react</strong> and
           <strong> babel-loader</strong> babel packages, those can be installed
           with:
-          <CliCommand command={babelInstallsCommand} />
         </p>
+        <CliCommand command={babelInstallsCommand} />
         <p>
           After installing the packages we are ready to create the configuration
           files which will enable us to use webpack and babel for our project.
@@ -95,8 +95,8 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           simple. All you need to do is creating the <strong>.babelrc</strong>{' '}
           file in your root directory and inside of it indicate the presets
           we've just installed, as follow:
-          <CodeSnippet code={babelRcCode} lang={CodeSnippetLanguage.JS} />
         </p>
+        <CodeSnippet code={babelRcCode} lang={CodeSnippetLanguage.JS} />
         <p>
           And then we move to webpack's configuration, again all you need is a
           single file in the root directory, this time named
@@ -105,8 +105,8 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
         <p>
           This file does configuration file contains much much more that babel's
           one, the code you will need here is:
-          <CodeSnippet code={webpackConfigCode} lang={CodeSnippetLanguage.JS} />
         </p>
+        <CodeSnippet code={webpackConfigCode} lang={CodeSnippetLanguage.JS} />
         <p>
           What the (nodejs) code does is to export a module containing your
           webpack configuration, which from a high level point of view consist

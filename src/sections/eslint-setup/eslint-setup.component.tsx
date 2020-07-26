@@ -56,15 +56,15 @@ const EsLintSetupSection: FunctionComponent = () => {
             <Icon icon={webPackIcon} />
           </span>
         </div>
-        <p>
-          We need to start by installing some dev dependency packages:
-          <CliCommand command={installCommand} />
-        </p>
+        <p>We need to start by installing some dev dependency packages:</p>
+        <CliCommand command={installCommand} />
         <p>
           Next in the project's root directory let's create a new
           <strong> .eslintrc</strong> file and populate it with the various
           configurations required for example like this:
-          <CodeSnippet code={eslintrcCode} lang={CodeSnippetLanguage.JS} />
+        </p>
+        <CodeSnippet code={eslintrcCode} lang={CodeSnippetLanguage.JS} />
+        <p>
           The first four enties specify general configurations like that our
           code is written in react and meant to be run in the browser. They also
           specify that we want to extend the standard ESLint rules specificed
@@ -78,11 +78,13 @@ const EsLintSetupSection: FunctionComponent = () => {
           The simples way to set a rule is to add en entry in the
           <em> rules </em> object, with the field's name being the rule name and
           the value one of the following:
-          <ul>
-            <li>"off" or 0 : to turn the rule off</li>
-            <li>"warn" or 1 : to turn the rule on as a warning</li>
-            <li>"error" or 2 : to turn the rule on as an error</li>
-          </ul>
+        </p>
+        <ul>
+          <li>"off" or 0 : to turn the rule off</li>
+          <li>"warn" or 1 : to turn the rule on as a warning</li>
+          <li>"error" or 2 : to turn the rule on as an error</li>
+        </ul>
+        <p>
           All the available rules can be found in the{' '}
           <a href="https://eslint.org/docs/rules" target="_blank">
             ESLint official documentation
@@ -94,11 +96,11 @@ const EsLintSetupSection: FunctionComponent = () => {
           to run the ESLint checks when compiling our code, to do so we just
           need to add the <em>eslint-loader</em> in the js rule in the
           <em> webpack.config.js</em> file as follows:
-          <CodeSnippet
-            code={addEsLintLoaderToWebpackConfigCode}
-            lang={CodeSnippetLanguage.JS}
-          />
         </p>
+        <CodeSnippet
+          code={addEsLintLoaderToWebpackConfigCode}
+          lang={CodeSnippetLanguage.JS}
+        />
         <p>
           Now whenever you run your dev server or try to build your application
           you will see warnings or straight out compilation errors accordingly

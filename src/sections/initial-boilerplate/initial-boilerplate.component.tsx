@@ -76,16 +76,16 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         <p>
           Then we proceed by creating two directories (inside the projet's root
           directory):
-          <ul>
-            <li>
-              <strong>public</strong>, which will contain our static and built
-              files
-            </li>
-            <li>
-              <strong>src</strong>, which will contain our source files
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            <strong>public</strong>, which will contain our static and built
+            files
+          </li>
+          <li>
+            <strong>src</strong>, which will contain our source files
+          </li>
+        </ul>
         <p>
           Inside the <strong>public</strong> directory we want to create a
           standard <strong>index.html</strong> used in any react project, it

@@ -92,12 +92,11 @@ const CssSetupSection: FunctionComponent = () => {
         <p>
           Based on the basic <em>index.js</em> file I used in the first section
           I would define the app file as such:
-          <CodeSnippet code={appJsCode} lang={CodeSnippetLanguage.JS} />
-          And then update the index file as follows:
-          <CodeSnippet
-            code={updatedIndexJsCode}
-            lang={CodeSnippetLanguage.JS}
-          />
+        </p>
+        <CodeSnippet code={appJsCode} lang={CodeSnippetLanguage.JS} />
+        <p>And then update the index file as follows:</p>
+        <CodeSnippet code={updatedIndexJsCode} lang={CodeSnippetLanguage.JS} />
+        <p>
           After making the changes make sure everything still works as it did
           before.
         </p>
@@ -110,17 +109,17 @@ const CssSetupSection: FunctionComponent = () => {
           In our code for example we may want to see the <em>h1</em> text red,
           so in the <em>src</em> directory let's create the following
           <strong> app.css</strong> {sass ? '(or /.scss) ' : ''} file:
-          <CodeSnippet code={appCssCode} lang={CodeSnippetLanguage.CSS} />
         </p>
+        <CodeSnippet code={appCssCode} lang={CodeSnippetLanguage.CSS} />
         <p>
           To make use of the newly created css file we need to import it, so in
           the <em>app.js</em> imports section let's add a new import for the css
           file:
-          <CodeSnippet
-            code={appJSimportAppCssCode}
-            lang={CodeSnippetLanguage.JS}
-          />
         </p>
+        <CodeSnippet
+          code={appJSimportAppCssCode}
+          lang={CodeSnippetLanguage.JS}
+        />
         <p>
           At this point you can notice that webpack is no longer be able to
           compile our files, this is because it does not know how to handle our
@@ -133,17 +132,17 @@ const CssSetupSection: FunctionComponent = () => {
         <p>
           Firstly we need to install some loader packages which webpack will use
           to handle the style imports, we can do that by running:
-          <CliCommand command={styleLoadersInstallCommand} />
         </p>
+        <CliCommand command={styleLoadersInstallCommand} />
         <p>
           Then we can update the <em>webpack.config.js</em> by instructing it on
           how to handle css {sass ? 'and sass/scss' : ''} files, to do so, in
           the rules array add the following entry:
-          <CodeSnippet
-            code={webpackConfigStylesRulesCode}
-            lang={CodeSnippetLanguage.JS}
-          />
         </p>
+        <CodeSnippet
+          code={webpackConfigStylesRulesCode}
+          lang={CodeSnippetLanguage.JS}
+        />
         <p>
           Now if you try running your dev server again you should see it working
           again and the <em>h1</em> text should now be red, precisely as we
