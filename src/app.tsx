@@ -1,7 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import './app.scss';
 import { useSelector } from 'react-redux';
-import { selectEsLint } from './redux/settings/settings.selectors';
+import {
+  selectEsLint,
+  selectPrettier,
+} from './redux/settings/settings.selectors';
 import Header from './components/header/header.component';
 import Introduction from './sections/introduction/introduction.component';
 import Settings from './sections/settings/settings.component';
@@ -10,9 +13,11 @@ import WebPackBabelSetupSection from './sections/webpack-babel-setup/webpack-bab
 import RunAppSection from './sections/run-app/run-app.component';
 import CssSetupSection from './sections/css-setup/css-setup.component';
 import EsLintSetupSection from './sections/eslint-setup/eslint-setup.component';
+import PrettierSetupSection from './sections/prettier-setup/prettier-setup.component';
 
 const App: FunctionComponent = () => {
   const esLint = useSelector(selectEsLint);
+  const prettier = useSelector(selectPrettier);
 
   return (
     <>
@@ -24,6 +29,7 @@ const App: FunctionComponent = () => {
       <RunAppSection />
       <CssSetupSection />
       {esLint ? <EsLintSetupSection /> : null}
+      {prettier ? <PrettierSetupSection /> : null}
     </>
   );
 };
