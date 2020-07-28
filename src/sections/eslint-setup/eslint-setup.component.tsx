@@ -42,7 +42,7 @@ const EsLintSetupSection: FunctionComponent = () => {
     npm ? 'npm install --save-dev' : 'yarn add --dev'
   }`;
 
-  const installCommand = `${installDevLeadingText}  babel-eslint eslint eslint-config-react eslint-loader eslint-plugin-react`;
+  const installCommand = `${installDevLeadingText} babel-eslint eslint eslint-config-react eslint-loader eslint-plugin-react`;
 
   return (
     <section id="eslint-setup">
