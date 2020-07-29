@@ -27,7 +27,9 @@ const RunAppSection: FunctionComponent = () => {
   return (
     <section id="run-app" className="section">
       <div className="centering-container">
-        <h2 className="title">Run the App</h2>
+        <div className="title-container">
+          <h2 className="title">Run the App</h2>
+        </div>
         <p>
           Now that we've set up both webpack and babel we're ready to start our
           application, you should be able to start the application by running
