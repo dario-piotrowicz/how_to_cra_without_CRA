@@ -59,7 +59,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
   const babelInstallsCommand = `${installDevLeadingText} @babel/core @babel/preset-env @babel/preset-react babel-loader`;
 
   return (
-    <section id="webpack-babel-setup">
+    <section id="webpack-babel-setup" className="section">
       <div className="centering-container">
         <div className="title-container">
           <span className="icon webpack">

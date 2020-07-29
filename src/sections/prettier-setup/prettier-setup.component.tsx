@@ -34,7 +34,7 @@ const PrettierSetupSection: FunctionComponent = () => {
   const formatCommand = `${npm ? 'npm run' : 'yarn'} format`;
 
   return (
-    <section id="prettier-setup">
+    <section id="prettier-setup" className="section">
       <div className="centering-container">
         <div className="title-container">
           <span className="icon">

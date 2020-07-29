@@ -42,7 +42,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
   } react react-dom`;
 
   return (
-    <section id="initial-boilerplate">
+    <section id="initial-boilerplate" className="section">
       <div className="centering-container">
         <div className="title-container">
           <span className="icon">

@@ -1,40 +1,11 @@
 section#eslint-setup {
   background-color: #e8fffc;
-  transform: skewY(-5deg);
-  z-index: 1;
-  .centering-container {
-    transform: skewY(5deg);
-    padding: 2rem 1rem;
-    padding-bottom: 3rem;
 
+  .centering-container {
     .title-container {
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       .icon {
-        font-size: 3rem;
-        margin: 0 2rem;
         color: #4137d0;
       }
-      .title {
-        font-size: 1.65rem;
-        text-align: center;
-      }
-    }
-
-    .cli-command {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
-  ul {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    padding: 0rem 5rem;
-
-    li {
-      margin: 1rem 0;
     }
   }
 

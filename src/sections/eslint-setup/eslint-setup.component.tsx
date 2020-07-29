@@ -45,7 +45,7 @@ const EsLintSetupSection: FunctionComponent = () => {
   const installCommand = `${installDevLeadingText} babel-eslint eslint eslint-config-react eslint-loader eslint-plugin-react`;
 
   return (
-    <section id="eslint-setup">
+    <section id="eslint-setup" className="section">
       <div className="centering-container">
         <div className="title-container">
           <span className="icon">

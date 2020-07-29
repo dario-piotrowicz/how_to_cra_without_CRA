@@ -54,7 +54,7 @@ const CssSetupSection: FunctionComponent = () => {
 }`;
 
   return (
-    <section id="css-setup">
+    <section id="css-setup" className="section">
       <div className="centering-container">
         <div className="title-container">
           <span className="icon css">

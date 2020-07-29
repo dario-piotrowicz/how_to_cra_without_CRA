@@ -25,7 +25,7 @@ const RunAppSection: FunctionComponent = () => {
   const startLanCommand = `${npm ? 'npm run' : 'yarn'} start-lan`;
 
   return (
-    <section id="run-app">
+    <section id="run-app" className="section">
       <div className="centering-container">
         <h2 className="title">Run the App</h2>
         <p>

@@ -1,38 +1,16 @@
 section#css-setup {
   background-color: #ffc14f;
-  transform: skewY(-5deg);
-  z-index: 1;
+
   .centering-container {
-    transform: skewY(5deg);
-    padding: 2rem 1rem;
-    padding-bottom: 3rem;
-
     .title-container {
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       .icon {
-        font-size: 3rem;
-        margin: 0 2rem;
-
         &.css {
           color: #264de4;
         }
-
         &.sass {
           color: #c76495;
         }
       }
-      .title {
-        font-size: 1.65rem;
-        text-align: center;
-      }
-    }
-
-    .cli-command {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
     }
   }
 }
