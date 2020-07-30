@@ -1,0 +1,11 @@
+@import '../../common/scss/constants.scss';
+@import '../../common/scss/mixins.scss';
+
+footer#main-footer {
+  background-color: $color-primary;
+  color: #fff;
+  padding: 0.2rem;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
