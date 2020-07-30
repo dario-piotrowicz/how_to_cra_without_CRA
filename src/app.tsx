@@ -22,7 +22,7 @@ const App: FunctionComponent = () => {
   const prettier = useSelector(selectPrettier);
 
   return (
-    <>
+    <div id="app">
       <Header />
       <Introduction />
       <Settings />
@@ -34,7 +34,7 @@ const App: FunctionComponent = () => {
       {prettier ? <PrettierSetupSection /> : null}
       <Conclusions />
       <Footer />
-    </>
+    </div>
   );
 };
 
