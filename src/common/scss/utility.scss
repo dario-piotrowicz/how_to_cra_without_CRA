@@ -49,8 +49,11 @@
     ul {
       font-family: 'Open Sans', sans-serif;
       font-size: 1rem;
-      padding: 0rem 5rem;
+      padding: 0 5rem;
 
+      @media (max-width: 430px) {
+        padding: 0 4rem;
+      }
       li {
         margin: 1rem 0;
       }
