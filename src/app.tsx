@@ -14,6 +14,7 @@ import RunAppSection from './sections/run-app/run-app.component';
 import CssSetupSection from './sections/css-setup/css-setup.component';
 import EsLintSetupSection from './sections/eslint-setup/eslint-setup.component';
 import PrettierSetupSection from './sections/prettier-setup/prettier-setup.component';
+import Conclusions from './sections/conclusions/conclusions.component';
 
 const App: FunctionComponent = () => {
   const esLint = useSelector(selectEsLint);
@@ -30,6 +31,7 @@ const App: FunctionComponent = () => {
       <CssSetupSection />
       {esLint ? <EsLintSetupSection /> : null}
       {prettier ? <PrettierSetupSection /> : null}
+      <Conclusions />
     </>
   );
 };
