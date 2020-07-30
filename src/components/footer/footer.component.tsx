@@ -4,7 +4,11 @@ import './footer.styles.scss';
 const Footer: FunctionComponent = () => {
   return (
     <footer id="main-footer">
-      <p>Dario Piotrowicz , dario.piotrowicz@gmail.com | Jul 2020</p>
+      <span>Dario Piotrowicz</span>
+      <span className="extra">,</span>
+      <span>dario.piotrowicz@gmail.com</span>
+      <span className="extra">|</span>
+      <span>Jul 2020</span>
     </footer>
   );
 };

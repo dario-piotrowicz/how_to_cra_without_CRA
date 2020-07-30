@@ -1,5 +1,4 @@
 @import '../../common/scss/constants.scss';
-@import '../../common/scss/mixins.scss';
 
 footer#main-footer {
   background-color: $color-primary;
@@ -8,4 +7,18 @@ footer#main-footer {
   margin: 0;
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+
+    span.extra {
+      display: none;
+    }
+  }
+
+  span {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0.5rem;
+  }
 }
