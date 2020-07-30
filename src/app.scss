@@ -23,6 +23,10 @@ label {
 p {
   margin: 0.5rem 1rem;
   padding: 0.5rem;
+
+  @media (max-width: 430px) {
+    margin: 0.5rem 0.5rem;
+  }
 }
 
 #app {
