@@ -1,5 +1,6 @@
 const path = require('path');
 const TSLintPlugin = require('tslint-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -35,5 +36,6 @@ module.exports = {
     new TSLintPlugin({
       files: ['./src/**/*.ts'],
     }),
+    new CompressionPlugin(),
   ],
 };
