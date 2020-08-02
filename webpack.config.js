@@ -1,5 +1,6 @@
 const path = require('path');
 const TSLintPlugin = require('tslint-webpack-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -34,6 +35,17 @@ module.exports = {
   plugins: [
     new TSLintPlugin({
       files: ['./src/**/*.ts'],
+    }),
+    new workboxPlugin.GenerateSW({
+      swDest: 'sw.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /\//,
+          handler: 'StaleWhileRevalidate',
+        },
+      ],
     }),
   ],
 };
