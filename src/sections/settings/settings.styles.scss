@@ -56,16 +56,23 @@ section#settings {
         display: none;
 
         & + span:before {
-          font-family: 'FontAwesome';
-          content: '\f096';
+          content: '';
           margin-right: 0.5rem;
           display: inline-block;
-          width: 1.5rem;
+          height: 1.3rem;
+          width: 1.3rem;
+          background: url('/assets/images/checkbox-unchecked.svg') center center /
+            cover;
+          background-color: #333333;
+          border-radius: 0;
         }
 
-        &:checked + span:before {
+        &:checked:not(:disabled) + span:before {
           color: $color-primary;
-          content: '\f14a';
+          border-radius: 5px;
+          background: url('/assets/images/checkbox-checked.svg') center center /
+            cover;
+          background-color: $color-primary;
           animation: tick 180ms ease-in;
         }
 
@@ -74,7 +81,10 @@ section#settings {
             color: #a4a4a4;
 
             &::before {
-              content: '\f0c8';
+              border-radius: 0;
+              background: url('/assets/images/checkbox-unchecked.svg') center
+                center / cover;
+              background-color: #a4a4a4;
             }
           }
         }
@@ -85,9 +95,11 @@ section#settings {
           }
           90% {
             transform: scale(1.4);
+            border-radius: 25px;
           }
           100% {
             transform: scale(1);
+            border-radius: 15px;
           }
         }
       }
