@@ -1,4 +1,10 @@
-import React, { FunctionComponent, lazy, Suspense, useState } from 'react';
+import React, {
+  FunctionComponent,
+  lazy,
+  Suspense,
+  useState,
+  useEffect,
+} from 'react';
 import './app.scss';
 import { useSelector } from 'react-redux';
 import {
@@ -33,11 +39,24 @@ const Conclusions = lazy(() =>
 );
 
 const App: FunctionComponent = () => {
-  const [showSectionsTimer, setShowSectionsTimer] = useState(0);
+  const [showSectionsCounter, setShowSectionsCounter] = useState(1);
 
-  if (showSectionsTimer < 7) {
-    setTimeout(() => setShowSectionsTimer(showSectionsTimer + 1));
-  }
+  useEffect(() => {
+    if (showSectionsCounter >= 7) return;
+
+    const updateSectionsToShow = () => {
+      const top = window.scrollY;
+
+      if (top > showSectionsCounter * 100) {
+        setShowSectionsCounter(Math.ceil(top / 100));
+      }
+    };
+
+    window.addEventListener('scroll', updateSectionsToShow);
+    return () => {
+      window.removeEventListener('scroll', updateSectionsToShow);
+    };
+  });
 
   const esLint = useSelector(selectEsLint);
   const prettier = useSelector(selectPrettier);
@@ -49,7 +68,7 @@ const App: FunctionComponent = () => {
     Component: FunctionComponent,
     showConditionMet = true
   ) => {
-    return showSectionsTimer < timerTreshold ? (
+    return showSectionsCounter < timerTreshold ? (
       loadingSectionDiv
     ) : showConditionMet ? (
       <Suspense fallback={loadingSectionDiv}>
