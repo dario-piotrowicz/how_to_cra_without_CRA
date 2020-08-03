@@ -53,9 +53,7 @@ const App: FunctionComponent = () => {
     };
 
     window.addEventListener('scroll', updateSectionsToShow);
-    return () => {
-      window.removeEventListener('scroll', updateSectionsToShow);
-    };
+    return () => window.removeEventListener('scroll', updateSectionsToShow);
   });
 
   const esLint = useSelector(selectEsLint);
@@ -67,15 +65,14 @@ const App: FunctionComponent = () => {
     timerTreshold: number,
     Component: FunctionComponent,
     showConditionMet = true
-  ) => {
-    return showSectionsCounter < timerTreshold ? (
+  ) =>
+    showSectionsCounter < timerTreshold ? (
       loadingSectionDiv
     ) : showConditionMet ? (
       <Suspense fallback={loadingSectionDiv}>
         <Component />
       </Suspense>
     ) : null;
-  };
 
   return (
     <div id="app">
