@@ -56,26 +56,40 @@ section#settings {
         display: none;
 
         & + span:before {
-          font-family: 'FontAwesome';
-          content: '\f096';
+          content: '';
           margin-right: 0.5rem;
           display: inline-block;
-          width: 1.5rem;
+          height: 1.3rem;
+          width: 1.3rem;
+          background: url('/assets/images/checkbox-unchecked.svg') center center /
+            cover;
+          background-color: #fff;
+          border: 2px solid #333;
+          border-radius: 5px;
+          box-sizing: border-box;
         }
 
         &:checked + span:before {
           color: $color-primary;
-          content: '\f14a';
+          border: 2px;
+          border-radius: 5px;
+          background: url('/assets/images/checkbox-checked.svg') center center /
+            cover;
+          background-color: $color-primary;
           animation: tick 180ms ease-in;
         }
 
         &:disabled {
+          $disabled-color: #a4a4a4;
           & + span {
-            color: #a4a4a4;
+            color: $disabled-color;
 
             &::before {
-              content: '\f0c8';
+              border-color: $disabled-color;
             }
+          }
+          &:checked + span::before {
+            background-color: $disabled-color;
           }
         }
 
@@ -85,9 +99,11 @@ section#settings {
           }
           90% {
             transform: scale(1.4);
+            border-radius: 25px;
           }
           100% {
             transform: scale(1);
+            border-radius: 15px;
           }
         }
       }

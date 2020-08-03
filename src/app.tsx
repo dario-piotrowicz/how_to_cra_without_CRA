@@ -1,4 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, {
+  FunctionComponent,
+  lazy,
+  Suspense,
+  useState,
+  useEffect,
+} from 'react';
 import './app.scss';
 import { useSelector } from 'react-redux';
 import {
@@ -8,31 +14,78 @@ import {
 import Header from './components/header/header.component';
 import Introduction from './sections/introduction/introduction.component';
 import Settings from './sections/settings/settings.component';
-import InitialBoilerplateSection from './sections/initial-boilerplate/initial-boilerplate.component';
-import WebPackBabelSetupSection from './sections/webpack-babel-setup/webpack-babel-setup.component';
-import RunAppSection from './sections/run-app/run-app.component';
-import CssSetupSection from './sections/css-setup/css-setup.component';
-import EsLintSetupSection from './sections/eslint-setup/eslint-setup.component';
-import PrettierSetupSection from './sections/prettier-setup/prettier-setup.component';
-import Conclusions from './sections/conclusions/conclusions.component';
 import Footer from './components/footer/footer.component';
 
+const InitialBoilerplateSection = lazy(() =>
+  import('./sections/initial-boilerplate/initial-boilerplate.component')
+);
+const WebPackBabelSetupSection = lazy(() =>
+  import('./sections/webpack-babel-setup/webpack-babel-setup.component')
+);
+const RunAppSection = lazy(() =>
+  import('./sections/run-app/run-app.component')
+);
+const CssSetupSection = lazy(() =>
+  import('./sections/css-setup/css-setup.component')
+);
+const EsLintSetupSection = lazy(() =>
+  import('./sections/eslint-setup/eslint-setup.component')
+);
+const PrettierSetupSection = lazy(() =>
+  import('./sections/prettier-setup/prettier-setup.component')
+);
+const Conclusions = lazy(() =>
+  import('./sections/conclusions/conclusions.component')
+);
+
 const App: FunctionComponent = () => {
+  const [showSectionsCounter, setShowSectionsCounter] = useState(1);
+
+  useEffect(() => {
+    if (showSectionsCounter >= 7) return;
+
+    const updateSectionsToShow = () => {
+      const top = window.scrollY;
+
+      if (top > showSectionsCounter * 100) {
+        setShowSectionsCounter(Math.ceil(top / 100));
+      }
+    };
+
+    window.addEventListener('scroll', updateSectionsToShow);
+    return () => window.removeEventListener('scroll', updateSectionsToShow);
+  });
+
   const esLint = useSelector(selectEsLint);
   const prettier = useSelector(selectPrettier);
+
+  const loadingSectionDiv = <div className="loading-section"></div>;
+
+  const lazyLoadSection = (
+    timerTreshold: number,
+    Component: FunctionComponent,
+    showConditionMet = true
+  ) =>
+    showSectionsCounter < timerTreshold ? (
+      loadingSectionDiv
+    ) : showConditionMet ? (
+      <Suspense fallback={loadingSectionDiv}>
+        <Component />
+      </Suspense>
+    ) : null;
 
   return (
     <div id="app">
       <Header />
       <Introduction />
       <Settings />
-      <InitialBoilerplateSection />
-      <WebPackBabelSetupSection />
-      <RunAppSection />
-      <CssSetupSection />
-      {esLint ? <EsLintSetupSection /> : null}
-      {prettier ? <PrettierSetupSection /> : null}
-      <Conclusions />
+      {lazyLoadSection(1, InitialBoilerplateSection)}
+      {lazyLoadSection(2, WebPackBabelSetupSection)}
+      {lazyLoadSection(3, RunAppSection)}
+      {lazyLoadSection(4, CssSetupSection)}
+      {lazyLoadSection(5, EsLintSetupSection, esLint)}
+      {lazyLoadSection(6, PrettierSetupSection, prettier)}
+      {lazyLoadSection(7, Conclusions)}
       <Footer />
     </div>
   );

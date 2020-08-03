@@ -3,15 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Sora&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-      rel="stylesheet"
-      type="text/css"
-    />
     <link rel="icon" href="favicon.ico" />
     <title>cra without CRA</title>
     <meta
@@ -22,9 +13,73 @@
       name="keywords"
       content="react, reactJS, webpack, babel, eslint, prettier, css, sass, cra"
     />
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('assets/fonts/OpenSans-Regular.ttf');
+      }
+      @font-face {
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('assets/fonts/Sora-Regular.ttf');
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header#root-tmp-header {
+        background-color: #6085e9;
+        width: 100%;
+      }
+
+      header#root-tmp-header > .title {
+        font-family: 'Sora', sans-serif;
+        padding: 3rem;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #fff;
+        margin: 0;
+      }
+
+      .root-tmp-text {
+        height: 2rem;
+        width: 70%;
+        background-color: #f5f5f5;
+        margin: 2rem auto;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <header id="root-tmp-header">
+        <h1 class="title">
+          How To Create a React App
+          <br />
+          Without Using
+          <br />
+          Create-React-App
+        </h1>
+      </header>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+      <div class="root-tmp-text"></div>
+    </div>
     <script src="bundle.js"></script>
   </body>
 </html>
