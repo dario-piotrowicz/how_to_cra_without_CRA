@@ -63,12 +63,15 @@ section#settings {
           width: 1.3rem;
           background: url('/assets/images/checkbox-unchecked.svg') center center /
             cover;
-          background-color: #333333;
-          border-radius: 0;
+          background-color: #fff;
+          border: 2px solid #333;
+          border-radius: 5px;
+          box-sizing: border-box;
         }
 
-        &:checked:not(:disabled) + span:before {
+        &:checked + span:before {
           color: $color-primary;
+          border: 2px;
           border-radius: 5px;
           background: url('/assets/images/checkbox-checked.svg') center center /
             cover;
@@ -77,15 +80,16 @@ section#settings {
         }
 
         &:disabled {
+          $disabled-color: #a4a4a4;
           & + span {
-            color: #a4a4a4;
+            color: $disabled-color;
 
             &::before {
-              border-radius: 0;
-              background: url('/assets/images/checkbox-unchecked.svg') center
-                center / cover;
-              background-color: #a4a4a4;
+              border-color: $disabled-color;
             }
+          }
+          &:checked + span::before {
+            background-color: $disabled-color;
           }
         }
 
