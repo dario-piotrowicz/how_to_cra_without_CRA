@@ -1,0 +1,14 @@
+@import '../../common/scss/constants.scss';
+
+.additional-info-icon {
+  color: lighten($color-dark-background, 30%);
+  cursor: pointer;
+  font-size: 0.9rem;
+  vertical-align: super;
+}
+
+.additiona-info-content-wrapper {
+  background-color: #f8f8f8;
+  border: 1px dashed lighten($color-dark-background, 25%);
+  padding: 0.5rem;
+}
