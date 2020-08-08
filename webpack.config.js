@@ -1,6 +1,7 @@
 const path = require('path');
 const TSLintPlugin = require('tslint-webpack-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -46,6 +47,9 @@ module.exports = {
           handler: 'StaleWhileRevalidate',
         },
       ],
+    }),
+    new FilterWarningsPlugin({
+      exclude: /.*GenerateSW has been called multiple times.*/,
     }),
   ],
 };
