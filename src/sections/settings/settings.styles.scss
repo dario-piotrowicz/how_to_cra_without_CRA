@@ -12,37 +12,43 @@ section#settings {
     flex-direction: column;
     align-items: center;
 
-    .switch-toggle {
-      margin: 1rem;
+    .switch-toggle-wrapper {
+      display: flex;
+      align-items: center;
+      padding-left: 2rem;
 
-      button {
-        font-size: 0.9rem;
-        outline: none;
-        cursor: pointer;
-        border-radius: 5px;
-        border: 1px solid #000;
-        color: #fff;
-        background-color: $color-dark-background;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.2s;
+      .switch-toggle {
+        margin: 1rem;
 
-        &:first-child {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
+        button {
+          font-size: 0.9rem;
+          outline: none;
+          cursor: pointer;
+          border-radius: 5px;
+          border: 1px solid #000;
+          color: #fff;
+          background-color: $color-dark-background;
+          padding: 0.5rem 1rem;
+          transition: background-color 0.2s;
 
-        &:last-child {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
+          &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
 
-        &.selected {
-          background-color: $color-primary;
-          cursor: default;
-        }
+          &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
 
-        &:hover:not(.selected) {
-          background-color: #2f3852;
+          &.selected {
+            background-color: $color-primary;
+            cursor: default;
+          }
+
+          &:hover:not(.selected) {
+            background-color: #2f3852;
+          }
         }
       }
     }
