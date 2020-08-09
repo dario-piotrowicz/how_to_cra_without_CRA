@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react';
 import './files-structure.styles.scss';
 import { Icon } from '@iconify/react';
 import foldertreeIcon from '@iconify/icons-whh/foldertree';
+import { useDispatch } from 'react-redux';
+import { showFilesStructure } from '../../redux/files-structure/files-structure.actions';
 
 interface FilesStructureButtonParams {
   structure: object;
@@ -10,8 +12,10 @@ interface FilesStructureButtonParams {
 const FilesStructureButton: FunctionComponent<FilesStructureButtonParams> = ({
   structure,
 }) => {
+  const dispatch = useDispatch();
+
   const onClickHanlder = () => {
-    console.log({ structure });
+    dispatch(showFilesStructure(structure));
   };
 
   return (
