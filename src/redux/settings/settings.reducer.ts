@@ -8,7 +8,7 @@ const initialState: SettingsStateType = {
   prettier: true,
 };
 
-const userReducer = (
+const settingsReducer = (
   state = initialState,
   action: { type: string; payload: any }
 ) => {
@@ -28,4 +28,4 @@ const userReducer = (
   }
 };
 
-export default userReducer;
+export default settingsReducer;
