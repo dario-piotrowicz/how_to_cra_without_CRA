@@ -2,6 +2,21 @@
 
 .files-structure-btn {
   background-color: transparent;
+  width: 0;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $color-primary;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
 
   @media (max-width: 1300px) {
     background-color: lighten($color-primary, 20%);
@@ -11,20 +26,14 @@
     align-items: center;
     justify-content: flex-end;
     border-radius: 15px;
-    transition: background-color 1s 0.5s;
-  }
+    transition: all 0.5s 0.2s;
 
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: $color-primary;
-    height: 4.5rem;
-    width: 4.5rem;
-    height: 4.5rem;
-    font-size: 3.5rem;
-    border-radius: 15px;
-    cursor: pointer;
+    .content {
+      height: 4.5rem;
+      width: 4.5rem;
+      font-size: 3.5rem;
+      border-radius: 15px;
+      cursor: pointer;
+    }
   }
 }
