@@ -70,6 +70,12 @@
     header {
       display: flex;
       justify-content: flex-end;
+      border-bottom: 2px solid rgba(#333, 0.1);
+
+      .title {
+        padding: 1rem;
+        text-align: center;
+      }
 
       .icon {
         cursor: pointer;
