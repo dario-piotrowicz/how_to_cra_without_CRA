@@ -1,0 +1,25 @@
+.files-structure-visualizer {
+  background-color: yellowgreen;
+  border: 1px solid black;
+  padding: 2rem;
+
+  .icon-and-text-container {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      font-size: 2rem;
+    }
+
+    .text {
+      margin-left: 0.5rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  .folder-content {
+    padding-left: 1.8rem;
+    border-left: 2px solid black;
+    margin-left: 1rem;
+  }
+}

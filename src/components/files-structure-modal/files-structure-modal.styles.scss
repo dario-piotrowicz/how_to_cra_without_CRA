@@ -70,7 +70,7 @@
     header {
       display: flex;
       justify-content: flex-end;
-      border-bottom: 2px solid rgba(#333, 0.1);
+      border-bottom: 2px solid rgba($color-dark-background, 0.1);
 
       .title {
         padding: 1rem;
@@ -103,6 +103,10 @@
         transform: translateY(-100vh);
         opacity: 0;
       }
+    }
+
+    section {
+      padding: 5rem;
     }
   }
 }

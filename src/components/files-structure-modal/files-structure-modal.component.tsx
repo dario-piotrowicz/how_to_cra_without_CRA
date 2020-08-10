@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { hideFilesStructure } from '../../redux/files-structure/files-structure.actions';
 import Icon from '@iconify/react';
 import timesIcon from '@iconify/icons-fa-solid/times';
+import FilesStructureVisualizer from '../files-structure-visualizer/files-structure-visualizer.component';
 
 const FilesStructureModal: FunctionComponent = () => {
   const [closing, setClosing] = useState(false);
@@ -29,6 +30,9 @@ const FilesStructureModal: FunctionComponent = () => {
             <Icon icon={timesIcon} />
           </span>
         </header>
+        <section>
+          <FilesStructureVisualizer structure={{}} />
+        </section>
       </div>
     </div>
   );
