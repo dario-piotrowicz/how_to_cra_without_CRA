@@ -18,18 +18,22 @@ const FilesStructureVisualizer: FunctionComponent<{ structure: object }> = ({
         <span className="text">Folder Name</span>
       </span>
       <div className="folder-content">
-        <span className="icon-and-text-container">
-          <span className="icon">
-            <Icon icon={folderIcon} />
+        <div className="item-container">
+          <span className="icon-and-text-container">
+            <span className="icon">
+              <Icon icon={folderIcon} />
+            </span>
+            <span className="text">Folder Name 1</span>
           </span>
-          <span className="text">Folder Name 1</span>
-        </span>
-        <span className="icon-and-text-container">
-          <span className="icon">
-            <Icon icon={fileIcon} />
+        </div>
+        <div className="item-container">
+          <span className="icon-and-text-container">
+            <span className="icon">
+              <Icon icon={fileIcon} />
+            </span>
+            <span className="text">File Name</span>
           </span>
-          <span className="text">File Name</span>
-        </span>
+        </div>
       </div>
     </div>
   );
