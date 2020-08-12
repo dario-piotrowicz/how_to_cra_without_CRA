@@ -4,37 +4,57 @@ import Icon from '@iconify/react';
 import folderIcon from '@iconify/icons-fa-solid/folder';
 import fileIcon from '@iconify/icons-fa-solid/file';
 
-const FilesStructureVisualizer: FunctionComponent<{ structure: object }> = ({
-  structure,
-}) => {
-  if (!structure) return <div>Error</div>;
-
+const FileVisualizerLI: FunctionComponent<{ name: string }> = ({ name }) => {
   return (
-    <div className="files-structure-visualizer">
+    <li>
+      <span className="icon-and-text-container">
+        <span className="icon">
+          <Icon icon={fileIcon} />
+        </span>
+        <span className="text">{name}</span>
+      </span>
+    </li>
+  );
+};
+
+const FolderVisualizerLI: FunctionComponent<{
+  name?: string;
+  structure: object;
+  root?: boolean;
+}> = ({ name = '', structure, root = false }) => {
+  return (
+    <li className={root ? 'root' : null}>
       <span className="icon-and-text-container">
         <span className="icon">
           <Icon icon={folderIcon} />
         </span>
-        <span className="text">Folder Name</span>
+        <span className="text">{name}</span>
       </span>
-      <div className="folder-content">
-        <div className="item-container">
-          <span className="icon-and-text-container">
-            <span className="icon">
-              <Icon icon={folderIcon} />
-            </span>
-            <span className="text">Folder Name 1</span>
-          </span>
-        </div>
-        <div className="item-container">
-          <span className="icon-and-text-container">
-            <span className="icon">
-              <Icon icon={fileIcon} />
-            </span>
-            <span className="text">File Name</span>
-          </span>
-        </div>
-      </div>
+      <ul>
+        {Object.keys(structure).map((key) =>
+          typeof (structure as any)[key] === 'object' ? (
+            <FolderVisualizerLI
+              key={key}
+              name={key}
+              structure={(structure as any)[key]}
+            />
+          ) : (
+            <FileVisualizerLI key={key} name={key} />
+          )
+        )}
+      </ul>
+    </li>
+  );
+};
+
+const FilesStructureVisualizer: FunctionComponent<{ structure: object }> = ({
+  structure,
+}) => {
+  return (
+    <div className="files-structure-visualizer">
+      <ul>
+        <FolderVisualizerLI structure={structure} root />
+      </ul>
     </div>
   );
 };

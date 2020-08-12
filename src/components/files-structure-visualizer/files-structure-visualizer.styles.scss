@@ -1,40 +1,55 @@
 .files-structure-visualizer {
-  background-color: yellowgreen;
+  background-color: #f4f4f4;
   border: 1px solid black;
   padding: 2rem;
 
-  .icon-and-text-container {
-    display: flex;
-    align-items: center;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 3.3rem;
 
-    .icon {
-      font-size: 2rem;
-    }
+    li {
+      position: relative;
+      margin-top: 0.6rem;
+      margin-left: -0.2rem;
 
-    .text {
-      margin-left: 0.5rem;
-      font-size: 1.3rem;
-    }
-  }
-
-  .folder-content {
-    border-left: 2px solid black;
-    margin-left: 1rem;
-
-    .item-container {
-      display: flex;
-      align-items: center;
-
-      &::before {
+      &:not(.root)::before {
         content: '';
+        position: absolute;
         display: inline-block;
-        height: 2px;
-        width: 1.4rem;
-        background-color: black;
+        width: 2rem;
+        height: 2.5rem;
+        left: -2.2rem;
+        top: -1.5rem;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 2rem;
+        height: 100%;
+        left: -2.2rem;
+        top: -0.7rem;
+        border-left: 1px solid black;
       }
 
       .icon-and-text-container {
-        margin-left: 0.6rem;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          font-size: 2rem;
+        }
+
+        .text {
+          margin-left: 0.5rem;
+          font-size: 1.3rem;
+        }
       }
     }
   }

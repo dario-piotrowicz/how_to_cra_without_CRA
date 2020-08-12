@@ -31,7 +31,12 @@ const FilesStructureModal: FunctionComponent = () => {
           </span>
         </header>
         <section>
-          <FilesStructureVisualizer structure={{}} />
+          <FilesStructureVisualizer
+            structure={{
+              public: { 'index.html': 'html-file' },
+              src: { 'index.js': 'js-file' },
+            }}
+          />
         </section>
       </div>
     </div>
