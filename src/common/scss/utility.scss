@@ -82,3 +82,21 @@
     }
   }
 }
+
+section.section > .files-structure-button-wrapper {
+  transform: skewY(5deg);
+  position: absolute;
+  left: 5%;
+  bottom: 2rem;
+
+  @media (max-width: 1300px) {
+    left: -9rem;
+    transition: left 0.5s cubic-bezier(0.54, 0.01, 0.18, 1),
+      bottom 0.5s cubic-bezier(0.54, 0.01, 0.18, 1);
+
+    &:hover {
+      bottom: 1.5rem;
+      left: -4rem;
+    }
+  }
+}

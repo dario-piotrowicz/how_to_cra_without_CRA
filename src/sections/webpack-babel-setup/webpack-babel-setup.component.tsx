@@ -121,7 +121,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           to provide their extension of their file).
         </p>
       </div>
-      <div className="files-structure-wrapper">
+      <div className="files-structure-button-wrapper">
         <FilesStructureButton
           structure={{
             public: { 'index.html': 'html-file' },

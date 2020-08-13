@@ -110,7 +110,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
           next!
         </p>
       </div>
-      <div className="files-structure-wrapper">
+      <div className="files-structure-button-wrapper">
         <FilesStructureButton
           structure={{
             public: { 'index.html': 'html-file' },
