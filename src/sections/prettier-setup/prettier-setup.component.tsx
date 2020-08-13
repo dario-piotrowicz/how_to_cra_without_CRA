@@ -4,10 +4,15 @@ import { Icon } from '@iconify/react';
 import prettierIcon from '@iconify/icons-simple-icons/prettier';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import { useSelector } from 'react-redux';
-import { selectNpm } from '../../redux/settings/settings.selectors';
+import {
+  selectNpm,
+  selectSass,
+  selectEsLint,
+} from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 
 const prettierConfigCode = `{
   "semi": true,
@@ -19,6 +24,8 @@ const formatScriptCode = '"format": "prettier --write "src/**/*.(js|jsx)""';
 
 const PrettierSetupSection: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
+  const sass = useSelector(selectSass);
+  const esLint = useSelector(selectEsLint);
 
   const installDevLeadingText = `${
     npm ? 'npm install --save-dev' : 'yarn add --dev'
@@ -32,6 +39,20 @@ const PrettierSetupSection: FunctionComponent = () => {
   const prettierRunCommand = `${nodeRunLeadingText} prettier --write src/**/*`;
 
   const formatCommand = `${npm ? 'npm run' : 'yarn'} format`;
+
+  const filesStructure = {
+    public: { 'index.html': 'html-file' },
+    src: {
+      'index.js': 'js-file',
+      'app.js': 'js-file',
+      [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
+    },
+    '.babelrc': 'json-file',
+    'webpack.config.js': 'js-file',
+    '.eslintrc': 'json-file',
+    '.prettierrc': 'json-file',
+  };
+  if (!esLint) delete filesStructure['.eslintrc'];
 
   return (
     <section id="prettier-setup" className="section">
@@ -110,6 +131,9 @@ const PrettierSetupSection: FunctionComponent = () => {
             alt="VSCode ESLint Extension"
           />
         </div>
+      </div>
+      <div className="files-structure-button-wrapper">
+        <FilesStructureButton structure={filesStructure} />
       </div>
     </section>
   );
