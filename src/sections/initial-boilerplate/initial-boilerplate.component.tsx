@@ -111,7 +111,12 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         </p>
       </div>
       <div className="files-structure-wrapper">
-        <FilesStructureButton structure={{}} />
+        <FilesStructureButton
+          structure={{
+            public: { 'index.html': 'html-file' },
+            src: { 'index.js': 'js-file' },
+          }}
+        />
       </div>
     </section>
   );

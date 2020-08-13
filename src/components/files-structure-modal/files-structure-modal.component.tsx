@@ -1,12 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
 import './files-structure-modal.styles.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { hideFilesStructure } from '../../redux/files-structure/files-structure.actions';
 import Icon from '@iconify/react';
 import timesIcon from '@iconify/icons-fa-solid/times';
 import FilesStructureVisualizer from '../files-structure-visualizer/files-structure-visualizer.component';
+import { selectFilesStructureStructure } from '../../redux/files-structure/files-structure.selectors';
 
 const FilesStructureModal: FunctionComponent = () => {
+  const structure = useSelector(selectFilesStructureStructure);
+
   const [closing, setClosing] = useState(false);
   const dispatch = useDispatch();
 
@@ -31,12 +34,7 @@ const FilesStructureModal: FunctionComponent = () => {
           </span>
         </header>
         <section>
-          <FilesStructureVisualizer
-            structure={{
-              public: { 'index.html': 'html-file' },
-              src: { 'index.js': 'js-file' },
-            }}
-          />
+          <FilesStructureVisualizer structure={structure} />
         </section>
       </div>
     </div>
