@@ -157,7 +157,7 @@ const CssSetupSection: FunctionComponent = () => {
             src: {
               'index.js': 'js-file',
               'app.js': 'js-file',
-              [`app.${sass ? 's' : ''}css`]: 'css-file',
+              [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
             },
             '.babelrc': 'json-file',
             'webpack.config.js': 'js-file',
