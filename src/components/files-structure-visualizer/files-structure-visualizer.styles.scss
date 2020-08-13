@@ -1,27 +1,28 @@
 .files-structure-visualizer {
-  background-color: #f4f4f4;
-  border: 1px solid black;
-  padding: 2rem;
+  font-size: 1.5rem;
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-left: 3.3rem;
+
+    &:not(.root) {
+      margin-left: 3.3em;
+    }
 
     li {
       position: relative;
-      margin-top: 0.6rem;
-      margin-left: -0.2rem;
+      margin-top: 0.6em;
+      margin-left: -0.2em;
 
       &:not(.root)::before {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 2rem;
-        height: 2.5rem;
-        left: -2.2rem;
-        top: -1.5rem;
+        width: 2em;
+        height: 2.5em;
+        left: -2.2em;
+        top: -1.5em;
         border-left: 1px solid black;
         border-bottom: 1px solid black;
         border-bottom-left-radius: 5px;
@@ -31,10 +32,10 @@
         content: '';
         position: absolute;
         display: inline-block;
-        width: 2rem;
+        width: 2em;
         height: 100%;
-        left: -2.2rem;
-        top: -0.7rem;
+        left: -2.2em;
+        top: -0.7em;
         border-left: 1px solid black;
       }
 
@@ -43,12 +44,12 @@
         align-items: center;
 
         .icon {
-          font-size: 2rem;
+          font-size: 2em;
         }
 
         .text {
-          margin-left: 0.5rem;
-          font-size: 1.3rem;
+          margin-left: 0.5em;
+          font-size: 1.3em;
         }
       }
     }

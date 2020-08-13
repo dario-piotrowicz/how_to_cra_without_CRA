@@ -109,8 +109,12 @@
     }
 
     section {
-      padding: 5rem;
+      display: flex;
       overflow: auto;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

@@ -52,7 +52,7 @@ const FilesStructureVisualizer: FunctionComponent<{ structure: object }> = ({
 }) => {
   return (
     <div className="files-structure-visualizer">
-      <ul>
+      <ul className="root">
         <FolderVisualizerLI structure={structure} root />
       </ul>
     </div>
