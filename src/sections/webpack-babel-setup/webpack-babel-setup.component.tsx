@@ -9,6 +9,7 @@ import { selectNpm } from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 
 const babelRcCode = `{
   "presets": [
@@ -119,6 +120,16 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           allows you to import javascript modules in your code without the need
           to provide their extension of their file).
         </p>
+      </div>
+      <div className="files-structure-wrapper">
+        <FilesStructureButton
+          structure={{
+            public: { 'index.html': 'html-file' },
+            src: { 'index.js': 'js-file' },
+            '.babelrc': 'json-file',
+            'webpack.config.js': 'js-file',
+          }}
+        />
       </div>
     </section>
   );
