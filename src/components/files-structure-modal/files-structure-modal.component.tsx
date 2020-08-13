@@ -24,7 +24,7 @@ const FilesStructureModal: FunctionComponent = () => {
         <header>
           <h2 className="title">
             If you've been following the guide at this point your project's
-            files structure should be as follows:
+            files structure should be as follows
           </h2>
           <span className="icon" onClick={() => setClosing(true)}>
             <Icon icon={timesIcon} />
