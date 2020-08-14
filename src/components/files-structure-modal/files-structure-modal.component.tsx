@@ -23,7 +23,7 @@ const FilesStructureModal: FunctionComponent = () => {
         className={`backdrop${closing ? ' closing' : ''}`}
         onClick={() => setClosing(true)}
       />
-      <div className={`body${closing ? ' closing' : ''}`}>
+      <div className={`modal${closing ? ' closing' : ''}`}>
         <header>
           <h2 className="title">
             If you've been following the guide at this point your project's
@@ -33,9 +33,11 @@ const FilesStructureModal: FunctionComponent = () => {
             <Icon icon={timesIcon} />
           </span>
         </header>
-        <section>
-          <FilesStructureVisualizer structure={structure} />
-        </section>
+        <main>
+          <div className="content">
+            <FilesStructureVisualizer structure={structure} />
+          </div>
+        </main>
       </div>
     </div>
   );
