@@ -78,6 +78,13 @@
       .title {
         padding: 1rem;
         text-align: center;
+        @media (max-width: 950px) {
+          padding: 0.5rem;
+          font-size: 1.3rem;
+        }
+        @media (max-width: 800px) {
+          font-size: 1rem;
+        }
       }
 
       .icon {
@@ -109,17 +116,23 @@
     }
 
     main {
-      height: 0;
+      min-height: 0;
       flex: 1;
       display: flex;
       padding: 1rem;
 
       .content {
+        overflow: auto;
+        padding: 0.5rem;
         flex: 1;
         display: flex;
-        overflow: auto;
         justify-content: center;
       }
+    }
+
+    @media (max-width: 1300px) {
+      width: 70%;
+      max-height: 75%;
     }
   }
 }
