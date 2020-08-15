@@ -13,6 +13,7 @@ import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
 
 const prettierConfigCode = `{
   "semi": true,
@@ -40,7 +41,7 @@ const PrettierSetupSection: FunctionComponent = () => {
 
   const formatCommand = `${npm ? 'npm run' : 'yarn'} format`;
 
-  const filesStructure = {
+  const filesStructure: FilesStructureObject = {
     public: { 'index.html': 'html-file' },
     src: {
       'index.js': 'js-file',

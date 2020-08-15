@@ -1,8 +1,6 @@
-type FilesStructureFileType = { [key: string]: string };
-
-export type FilesStructureObject =
-  | { [key: string]: FilesStructureObject }
-  | FilesStructureFileType;
+export type FilesStructureObject = {
+  [key: string]: FilesStructureObject | string;
+};
 
 export interface FilesStructureStateType {
   visible: boolean;
