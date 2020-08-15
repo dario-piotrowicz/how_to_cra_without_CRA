@@ -3,6 +3,7 @@ import './files-structure-visualizer.styles.scss';
 import Icon from '@iconify/react';
 import folderIcon from '@iconify/icons-fa-solid/folder';
 import fileIcon from '@iconify/icons-fa-solid/file';
+import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
 
 const FileVisualizerLI: FunctionComponent<{ name: string }> = ({ name }) => {
   return (
@@ -19,7 +20,7 @@ const FileVisualizerLI: FunctionComponent<{ name: string }> = ({ name }) => {
 
 const FolderVisualizerLI: FunctionComponent<{
   name?: string;
-  structure: object;
+  structure: FilesStructureObject;
   root?: boolean;
 }> = ({ name = '', structure, root = false }) => {
   return (
@@ -31,25 +32,24 @@ const FolderVisualizerLI: FunctionComponent<{
         <span className="text">{name}</span>
       </span>
       <ul>
-        {Object.keys(structure).map((key) =>
-          typeof (structure as any)[key] === 'object' ? (
-            <FolderVisualizerLI
-              key={key}
-              name={key}
-              structure={(structure as any)[key]}
-            />
-          ) : (
-            <FileVisualizerLI key={key} name={key} />
-          )
-        )}
+        {Object.keys(structure).map((key) => {
+          const value = structure[key];
+          if (typeof value === 'string') {
+            return <FileVisualizerLI key={key} name={key} />;
+          } else {
+            return (
+              <FolderVisualizerLI key={key} name={key} structure={value} />
+            );
+          }
+        })}
       </ul>
     </li>
   );
 };
 
-const FilesStructureVisualizer: FunctionComponent<{ structure: object }> = ({
-  structure,
-}) => {
+const FilesStructureVisualizer: FunctionComponent<{
+  structure: FilesStructureObject;
+}> = ({ structure }) => {
   return (
     <div className="files-structure-visualizer">
       <ul className="root">

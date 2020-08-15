@@ -1,6 +1,12 @@
+type FilesStructureFileType = { [key: string]: string };
+
+export type FilesStructureObject =
+  | { [key: string]: FilesStructureObject }
+  | FilesStructureFileType;
+
 export interface FilesStructureStateType {
   visible: boolean;
-  structure: object;
+  structure: FilesStructureObject;
 }
 
 export enum filesStructureActionTypes {
