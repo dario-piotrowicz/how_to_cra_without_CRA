@@ -15,6 +15,7 @@ import Header from './components/header/header.component';
 import Introduction from './sections/introduction/introduction.component';
 import Settings from './sections/settings/settings.component';
 import Footer from './components/footer/footer.component';
+import { selectFilesStructureIsVisible } from './redux/files-structure/files-structure.selectors';
 
 const InitialBoilerplateSection = lazy(() =>
   import('./sections/initial-boilerplate/initial-boilerplate.component')
@@ -38,6 +39,10 @@ const Conclusions = lazy(() =>
   import('./sections/conclusions/conclusions.component')
 );
 
+const FilesStructureModal = lazy(() =>
+  import('./components/files-structure-modal/files-structure-modal.component')
+);
+
 const App: FunctionComponent = () => {
   const [showSectionsCounter, setShowSectionsCounter] = useState(1);
 
@@ -58,6 +63,8 @@ const App: FunctionComponent = () => {
 
   const esLint = useSelector(selectEsLint);
   const prettier = useSelector(selectPrettier);
+
+  const filesStructureIsVisible = useSelector(selectFilesStructureIsVisible);
 
   const loadingSectionDiv = <div className="loading-section"></div>;
 
@@ -87,6 +94,11 @@ const App: FunctionComponent = () => {
       {lazyLoadSection(6, PrettierSetupSection, prettier)}
       {lazyLoadSection(7, Conclusions)}
       <Footer />
+      {filesStructureIsVisible ? (
+        <Suspense fallback={null}>
+          <FilesStructureModal />
+        </Suspense>
+      ) : null}
     </div>
   );
 };

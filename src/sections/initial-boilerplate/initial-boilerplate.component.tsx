@@ -8,6 +8,7 @@ import CliCommand from '../../components/cli-command/cli-command.component';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 
 const indexHtmlCode = `<!DOCTYPE html>
 <html lang="en">
@@ -108,6 +109,14 @@ const InitialBoilerplateSection: FunctionComponent = () => {
           that's exaclty what this guide is about and what we are going to do
           next!
         </p>
+      </div>
+      <div className="files-structure-button-wrapper">
+        <FilesStructureButton
+          structure={{
+            public: { 'index.html': 'html-file' },
+            src: { 'index.js': 'js-file' },
+          }}
+        />
       </div>
     </section>
   );

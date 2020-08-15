@@ -1,0 +1,39 @@
+@import '../../common/scss/constants.scss';
+
+.files-structure-btn {
+  background-color: transparent;
+  width: 0;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $color-primary;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  @media (max-width: 1300px) {
+    background-color: lighten($color-primary, 20%);
+    width: 9rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 15px;
+    transition: all 0.5s 0.2s;
+
+    .content {
+      height: 4.5rem;
+      width: 4.5rem;
+      font-size: 3.5rem;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import CliCommand from '../../components/cli-command/cli-command.component';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 
 const appJsCode = `import React from 'react';
 
@@ -148,6 +149,20 @@ const CssSetupSection: FunctionComponent = () => {
           again and the <em>h1</em> text should now be red, precisely as we
           wanted.
         </p>
+      </div>
+      <div className="files-structure-button-wrapper">
+        <FilesStructureButton
+          structure={{
+            public: { 'index.html': 'html-file' },
+            src: {
+              'index.js': 'js-file',
+              'app.js': 'js-file',
+              [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
+            },
+            '.babelrc': 'json-file',
+            'webpack.config.js': 'js-file',
+          }}
+        />
       </div>
     </section>
   );
