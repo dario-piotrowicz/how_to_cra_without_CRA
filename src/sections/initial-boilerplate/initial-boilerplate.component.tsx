@@ -57,7 +57,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         <p>
           To start creating our project we will first need a very basic react
           application to use as a framework which we can use to test our
-          settings, so let's start by creating a very basic application.
+          settings, so let's start by creating a very basic react app.
         </p>
         <p>
           Naturally our project will need to be node based so let's initialize a
