@@ -10,6 +10,7 @@ import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
 
 const babelRcCode = `{
   "presets": [
@@ -75,8 +76,27 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           First of all we need to install (as dev dependencies) a number of
           packages, for webpack we'll need the <strong>webpack</strong>,{' '}
           <strong>webpack-cli</strong> and
-          <strong> webpack-dev-server</strong> packages, those can be installed
-          with the following command:
+          <strong> webpack-dev-server</strong> packages
+          <AdditionalInfoIcon>
+            <ul className="webpack-packaged-additional-info">
+              <li>
+                <strong> webpack </strong> is the main package which implements
+                the bundler
+              </li>
+              <li>
+                <strong> webpack-cli </strong> is the cli interface which you
+                can use to control webpack (we don't actually use the cli in
+                this guide so you may skip this package if you want)
+              </li>
+              <li>
+                <strong> webpack-dev-server </strong> is a development server
+                which allows us to run the applicaton on our local machine and
+                it also reloads the application as soon as you modify some of
+                its files
+              </li>
+            </ul>
+          </AdditionalInfoIcon>
+          , those can be installed with the following command:
         </p>
         <CliCommand command={webpackInstallsCommand} />
         <p>
