@@ -109,7 +109,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         <p>
           Next inside the <strong>src</strong> directory we need an
           <strong> index.js</strong> which implements a very basic react
-          application and injects it in out root div, something like:
+          application and injects it in our root div, something like:
         </p>
         <CodeSnippet code={indexJsCode} lang={CodeSnippetLanguage.JS} />
         <p>
