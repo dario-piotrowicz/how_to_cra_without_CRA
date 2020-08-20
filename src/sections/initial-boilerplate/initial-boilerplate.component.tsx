@@ -71,7 +71,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         </p>
         <p>
           Now that we have our node project set up we can start by installing
-          the besic react packages:
+          the basic react packages:
         </p>
         <CliCommand command={reactInstallCommand} />
         <p>
