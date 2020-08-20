@@ -9,6 +9,7 @@ import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
 
 const indexHtmlCode = `<!DOCTYPE html>
 <html lang="en">
@@ -68,6 +69,14 @@ const InitialBoilerplateSection: FunctionComponent = () => {
         <p>
           The command will require you to choose some settings, you can just
           leave them all as default or choose the ones you prefer.
+          <AdditionalInfoIcon>
+            <p>
+              If you don't care about those settings and just want to get
+              started (those can be changed whenever you want anyway) just run
+              the init command using the <em>-y</em> flag as in:
+            </p>
+            <CliCommand command={`${initCommand} -y`} />
+          </AdditionalInfoIcon>
         </p>
         <p>
           Now that we have our node project set up we can start by installing
