@@ -13,6 +13,29 @@ section#webpack-babel-setup {
       }
     }
 
+    .webpack-babel-basic-info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .webpack-babel-basic-info {
+        border: 1px solid black;
+        background-color: #f0f0f0;
+        margin: 0 1rem;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 1s, opacity 1s, margin 1s;
+
+        &.show {
+          margin: 1rem;
+          max-height: 65rem;
+          opacity: 1;
+        }
+      }
+    }
+
     ul.webpack-packaged-additional-info {
       padding: 0 1.5rem;
     }

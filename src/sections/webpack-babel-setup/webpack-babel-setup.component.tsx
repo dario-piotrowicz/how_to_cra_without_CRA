@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import './webpack-babel-setup.styles.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { Icon } from '@iconify/react';
@@ -76,6 +76,10 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
   const webpackInstallsCommand = `${installDevLeadingText} webpack webpack-cli webpack-dev-server`;
   const babelInstallsCommand = `${installDevLeadingText} @babel/core @babel/preset-env @babel/preset-react babel-loader`;
 
+  const [showWebPackBabelBasicInfo, setShowWebPackBabelBasicInfo] = useState(
+    false
+  );
+
   return (
     <section id="webpack-babel-setup" className="section">
       <div className="centering-container">
@@ -87,6 +91,58 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           <span className="icon babel">
             <Icon icon={babelIcon} />
           </span>
+        </div>
+        <div className="webpack-babel-basic-info-container">
+          <button
+            className="btn"
+            onClick={() =>
+              setShowWebPackBabelBasicInfo(!showWebPackBabelBasicInfo)
+            }
+          >
+            What are Webpack and Babel? And what do we need them for?
+          </button>
+          <div
+            className={`webpack-babel-basic-info ${
+              showWebPackBabelBasicInfo ? 'show' : ''
+            }`}
+          >
+            <p>
+              We are writing our React app using JSX{' '}
+              <em>
+                (JSX is not an actually a React requirement but practically
+                almost all React applications use it)
+              </em>
+              .<br />
+              JSX is not something browsers can understand and execute, so
+              before we can give our files to a browser for execution we need to
+              convert them into plain javascript, which can then be interpreted
+              and executed normally, in order to do that we use <em>Babel</em>.
+            </p>
+            <p>
+              <strong>Babel</strong> is a tool (technically a transcompiler)
+              that converts specific type of code into simple javascript. It can
+              convert JSX to plain javascript or even modern javascript code
+              into an older version of javascript so that it can be executed by
+              older browsers.
+            </p>
+            <p>
+              Once our code is ready it needs to be included into our html page,
+              this can be rather problematic as our project can include multiple
+              javascript files and browsers don't implement a way for javascript
+              files to import one another. So the solution is to just
+              <em> bundle</em> all our javascript files into a single one and
+              make sure the html page imports that, this is done via
+              <em> Webpack</em>
+            </p>
+            <p>
+              <strong>Webpack</strong> is a module bundler for javascript
+              applications, (very) basically it builds a single javascript file
+              for your entire application which can then be imported by the html
+              page. Not only webpack is capable of bundling all our javascript
+              code but it can also bundle our css files so that we don't need to
+              import them in the html file either.
+            </p>
+          </div>
         </div>
         <p>
           First of all we need to install (as dev dependencies) a number of
