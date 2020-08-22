@@ -3,6 +3,7 @@ import { SettingsStateType, settingsActionTypes } from './settings.types';
 const initialState: SettingsStateType = {
   npm: true,
   yarn: false,
+  babelrc: true,
   sass: true,
   esLint: true,
   prettier: true,
@@ -17,6 +18,8 @@ const settingsReducer = (
       return { ...state, npm: !!action.payload };
     case settingsActionTypes.SET_YARN:
       return { ...state, yarn: !!action.payload };
+    case settingsActionTypes.SET_BABELRC:
+      return { ...state, babelrc: !!action.payload };
     case settingsActionTypes.SET_SASS:
       return { ...state, sass: !!action.payload };
     case settingsActionTypes.SET_ESLINT:

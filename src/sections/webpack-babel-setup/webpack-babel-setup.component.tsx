@@ -1,16 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import './webpack-babel-setup.styles.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Icon } from '@iconify/react';
 import webPackIcon from '@iconify/icons-simple-icons/webpack';
 import babelIcon from '@iconify/icons-simple-icons/babel';
 import CliCommand from '../../components/cli-command/cli-command.component';
-import { selectNpm } from '../../redux/settings/settings.selectors';
+import {
+  selectNpm,
+  selectBabelrc,
+} from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
+import { setBabelrc } from '../../redux/settings/settings.actions';
 
 const babelRcCode = `{
   "presets": [
@@ -18,6 +22,14 @@ const babelRcCode = `{
     "@babel/preset-react"
   ]
 }`;
+
+const packageJsonBabelPropCode = `"babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+`;
 
 const webpackConfigCode = `const path = require('path');
 
@@ -52,6 +64,9 @@ module.exports = {
 
 const WebPackBabelSetupSection: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
+  const babelrc = useSelector(selectBabelrc);
+
+  const dispatch = useDispatch();
 
   const installDevLeadingText = `${
     npm ? 'npm install --save-dev' : 'yarn add --dev'
@@ -112,12 +127,54 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
           files which will enable us to use webpack and babel for our project.
         </p>
         <p>
-          We can start with babel, as it's configuration file is very short and
-          simple. All you need to do is creating the <strong>.babelrc </strong>
-          file in your root directory and inside of it indicate the presets
-          we've just installed, as follow:
+          We start with babel, it configuration is very short and simple. All we
+          need to do is configuring what presets needs to be applied when
+          handling our code.
         </p>
-        <CodeSnippet code={babelRcCode} lang={CodeSnippetLanguage.JS} />
+        <p>
+          This can be done by either creating a configuration file named
+          <em> .babelrc</em> or by modifying the <em>package.json</em> file.
+        </p>
+        <p>Which option do you prefer?</p>
+        <div className="switch-toggle-wrapper">
+          <div className="switch-toggle">
+            <button
+              className={`${babelrc ? 'selected' : ''}`}
+              disabled={babelrc}
+              onClick={() => dispatch(setBabelrc(true))}
+            >
+              .babelrc
+            </button>
+            <button
+              className={`${!babelrc ? 'selected' : ''}`}
+              disabled={!babelrc}
+              onClick={() => dispatch(setBabelrc(false))}
+            >
+              package.json
+            </button>
+          </div>
+        </div>
+        {/* it's not a beautiful solution, but here I am using display none/block instead of a normal
+        js expression for toggling the divs, this is because otherwise the code snippet would not highlight
+        the code (I guess it must be a bug in the Prism library or something) */}
+        <div style={{ display: babelrc ? 'block' : 'none' }}>
+          <p>
+            All you need to do is creating the <strong>.babelrc </strong>
+            file in your root directory and inside of it indicate the presets
+            we've just installed, as follow:
+          </p>
+          <CodeSnippet code={babelRcCode} lang={CodeSnippetLanguage.JS} />
+        </div>
+        <div style={{ display: !babelrc ? 'block' : 'none' }}>
+          <p>
+            All you need to do is adding the <strong>babel</strong> property in
+            your <em>package.json</em> file in the following way:
+          </p>
+          <CodeSnippet
+            code={packageJsonBabelPropCode}
+            lang={CodeSnippetLanguage.JS}
+          />
+        </div>
         <p>
           And then we move to webpack's configuration, again all you need is a
           single file in the root directory, this time named

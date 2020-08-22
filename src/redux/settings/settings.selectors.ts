@@ -15,6 +15,11 @@ export const selectYarn = createSelector(
   (settings) => settings.yarn
 );
 
+export const selectBabelrc = createSelector(
+  [selectSettings],
+  (settings) => settings.babelrc
+);
+
 export const selectSass = createSelector(
   [selectSettings],
   (settings) => settings.sass

@@ -13,44 +13,7 @@ section#settings {
     align-items: center;
 
     .switch-toggle-wrapper {
-      display: flex;
-      align-items: center;
       padding-left: 2rem;
-
-      .switch-toggle {
-        margin: 1rem;
-
-        button {
-          font-size: 0.9rem;
-          outline: none;
-          cursor: pointer;
-          border-radius: 5px;
-          border: 1px solid #000;
-          color: #fff;
-          background-color: $color-dark-background;
-          padding: 0.5rem 1rem;
-          transition: background-color 0.2s;
-
-          &:first-child {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          &:last-child {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          &.selected {
-            background-color: $color-primary;
-            cursor: default;
-          }
-
-          &:hover:not(.selected) {
-            background-color: #2f3852;
-          }
-        }
-      }
     }
 
     label.checkbox {

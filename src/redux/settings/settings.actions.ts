@@ -10,6 +10,11 @@ export const setYarn = (value: boolean) => ({
   payload: value,
 });
 
+export const setBabelrc = (value: boolean) => ({
+  type: settingsActionTypes.SET_BABELRC,
+  payload: value,
+});
+
 export const setSass = (value: boolean) => ({
   type: settingsActionTypes.SET_SASS,
   payload: value,
