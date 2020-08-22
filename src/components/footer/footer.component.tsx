@@ -8,7 +8,7 @@ const Footer: FunctionComponent = () => {
       <span className="extra">,</span>
       <span>dario.piotrowicz@gmail.com</span>
       <span className="extra">|</span>
-      <span>Jul 2020</span>
+      <span>Aug 2020</span>
     </footer>
   );
 };
