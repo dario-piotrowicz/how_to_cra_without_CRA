@@ -74,8 +74,8 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
         </div>
         <p>
           First of all we need to install (as dev dependencies) a number of
-          packages, for webpack we'll need the <strong>webpack</strong>,{' '}
-          <strong>webpack-cli</strong> and
+          packages, for webpack we'll need the <strong>webpack</strong>,
+          <strong> webpack-cli</strong> and
           <strong> webpack-dev-server</strong> packages
           <AdditionalInfoIcon>
             <ul className="webpack-packaged-additional-info">
