@@ -4,12 +4,17 @@ import Icon from '@iconify/react';
 import cssIcon from '@iconify/icons-simple-icons/css3';
 import sassIcon from '@iconify/icons-simple-icons/sass';
 import { useSelector } from 'react-redux';
-import { selectSass, selectNpm } from '../../redux/settings/settings.selectors';
+import {
+  selectSass,
+  selectNpm,
+  selectBabelrc,
+} from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
 
 const appJsCode = `import React from 'react';
 
@@ -53,6 +58,20 @@ const CssSetupSection: FunctionComponent = () => {
   test: /\.${sass ? '(sass|scss|css)' : 'css'}$/,
   use: ['style-loader', 'css-loader'${sass ? ", 'sass-loader'" : ''}]
 }`;
+
+  const babelrc = useSelector(selectBabelrc);
+
+  const filesStructure: FilesStructureObject = {
+    public: { 'index.html': 'html-file' },
+    src: {
+      'index.js': 'js-file',
+      'app.js': 'js-file',
+      [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
+    },
+    '.babelrc': 'json-file',
+    'webpack.config.js': 'js-file',
+  };
+  if (!babelrc) delete filesStructure['.babelrc'];
 
   return (
     <section id="css-setup" className="section">
@@ -151,18 +170,7 @@ const CssSetupSection: FunctionComponent = () => {
         </p>
       </div>
       <div className="files-structure-button-wrapper">
-        <FilesStructureButton
-          structure={{
-            public: { 'index.html': 'html-file' },
-            src: {
-              'index.js': 'js-file',
-              'app.js': 'js-file',
-              [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
-            },
-            '.babelrc': 'json-file',
-            'webpack.config.js': 'js-file',
-          }}
-        />
+        <FilesStructureButton structure={filesStructure} />
       </div>
     </section>
   );

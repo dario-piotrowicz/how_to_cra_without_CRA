@@ -15,6 +15,7 @@ import CodeSnippet, {
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
 import { setBabelrc } from '../../redux/settings/settings.actions';
+import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
 
 const babelRcCode = `{
   "presets": [
@@ -74,6 +75,14 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
 
   const webpackInstallsCommand = `${installDevLeadingText} webpack webpack-cli webpack-dev-server`;
   const babelInstallsCommand = `${installDevLeadingText} @babel/core @babel/preset-env @babel/preset-react babel-loader`;
+
+  const filesStructure: FilesStructureObject = {
+    public: { 'index.html': 'html-file' },
+    src: { 'index.js': 'js-file' },
+    '.babelrc': 'json-file',
+    'webpack.config.js': 'js-file',
+  };
+  if (!babelrc) delete filesStructure['.babelrc'];
 
   return (
     <section id="webpack-babel-setup" className="section">
@@ -199,14 +208,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
         </p>
       </div>
       <div className="files-structure-button-wrapper">
-        <FilesStructureButton
-          structure={{
-            public: { 'index.html': 'html-file' },
-            src: { 'index.js': 'js-file' },
-            '.babelrc': 'json-file',
-            'webpack.config.js': 'js-file',
-          }}
-        />
+        <FilesStructureButton structure={filesStructure} />
       </div>
     </section>
   );

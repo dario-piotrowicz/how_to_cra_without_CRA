@@ -8,6 +8,7 @@ import {
   selectNpm,
   selectSass,
   selectEsLint,
+  selectBabelrc,
 } from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
@@ -41,6 +42,8 @@ const PrettierSetupSection: FunctionComponent = () => {
 
   const formatCommand = `${npm ? 'npm run' : 'yarn'} format`;
 
+  const babelrc = useSelector(selectBabelrc);
+
   const filesStructure: FilesStructureObject = {
     public: { 'index.html': 'html-file' },
     src: {
@@ -53,6 +56,7 @@ const PrettierSetupSection: FunctionComponent = () => {
     '.eslintrc': 'json-file',
     '.prettierrc': 'json-file',
   };
+  if (!babelrc) delete filesStructure['.babelrc'];
   if (!esLint) delete filesStructure['.eslintrc'];
 
   return (
