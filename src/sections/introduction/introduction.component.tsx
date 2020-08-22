@@ -13,7 +13,7 @@ const Introduction: FunctionComponent = () => {
       <button className="btn" onClick={() => setShowAvoidCRA(!showAvoidCRA)}>
         Why avoiding CRA anyways?
       </button>
-      <div className={`why-avoid-CRA ${showAvoidCRA ? 'show' : ''}`}>
+      <div className={`optional-info-container ${showAvoidCRA ? 'show' : ''}`}>
         <p>
           If you're wondering why the need to avoid CRA, let me start by saying
           that personally I don't find avoiding CRA a necessity, and for most

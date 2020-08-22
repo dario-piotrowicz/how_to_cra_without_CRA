@@ -102,7 +102,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
             What are Webpack and Babel? And what do we need them for?
           </button>
           <div
-            className={`webpack-babel-basic-info ${
+            className={`optional-info-container ${
               showWebPackBabelBasicInfo ? 'show' : ''
             }`}
           >
