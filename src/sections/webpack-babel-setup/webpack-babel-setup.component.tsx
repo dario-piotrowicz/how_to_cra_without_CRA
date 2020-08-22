@@ -113,7 +113,7 @@ const WebPackBabelSetupSection: FunctionComponent = () => {
         </p>
         <p>
           We can start with babel, as it's configuration file is very short and
-          simple. All you need to do is creating the <strong>.babelrc</strong>{' '}
+          simple. All you need to do is creating the <strong>.babelrc </strong>
           file in your root directory and inside of it indicate the presets
           we've just installed, as follow:
         </p>
