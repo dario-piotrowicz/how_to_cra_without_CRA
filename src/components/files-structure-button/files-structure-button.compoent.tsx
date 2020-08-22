@@ -4,18 +4,19 @@ import { Icon } from '@iconify/react';
 import foldertreeIcon from '@iconify/icons-whh/foldertree';
 import { useDispatch } from 'react-redux';
 import { showFilesStructure } from '../../redux/files-structure/files-structure.actions';
+import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';
 
 interface FilesStructureButtonParams {
-  structure: object;
+  sectionIndex: SectionAbsoluteIndex;
 }
 
 const FilesStructureButton: FunctionComponent<FilesStructureButtonParams> = ({
-  structure,
+  sectionIndex,
 }) => {
   const dispatch = useDispatch();
 
   const onClickHanlder = () => {
-    dispatch(showFilesStructure(structure));
+    dispatch(showFilesStructure(sectionIndex));
   };
 
   return (

@@ -4,17 +4,12 @@ import { Icon } from '@iconify/react';
 import prettierIcon from '@iconify/icons-simple-icons/prettier';
 import CliCommand from '../../components/cli-command/cli-command.component';
 import { useSelector } from 'react-redux';
-import {
-  selectNpm,
-  selectSass,
-  selectEsLint,
-  selectBabelrc,
-} from '../../redux/settings/settings.selectors';
+import { selectNpm } from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
-import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
+import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';
 
 const prettierConfigCode = `{
   "semi": true,
@@ -26,8 +21,6 @@ const formatScriptCode = '"format": "prettier --write "src/**/*.(js|jsx)""';
 
 const PrettierSetupSection: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
-  const sass = useSelector(selectSass);
-  const esLint = useSelector(selectEsLint);
 
   const installDevLeadingText = `${
     npm ? 'npm install --save-dev' : 'yarn add --dev'
@@ -41,23 +34,6 @@ const PrettierSetupSection: FunctionComponent = () => {
   const prettierRunCommand = `${nodeRunLeadingText} prettier --write src/**/*`;
 
   const formatCommand = `${npm ? 'npm run' : 'yarn'} format`;
-
-  const babelrc = useSelector(selectBabelrc);
-
-  const filesStructure: FilesStructureObject = {
-    public: { 'index.html': 'html-file' },
-    src: {
-      'index.js': 'js-file',
-      'app.js': 'js-file',
-      [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
-    },
-    '.babelrc': 'json-file',
-    'webpack.config.js': 'js-file',
-    '.eslintrc': 'json-file',
-    '.prettierrc': 'json-file',
-  };
-  if (!babelrc) delete filesStructure['.babelrc'];
-  if (!esLint) delete filesStructure['.eslintrc'];
 
   return (
     <section id="prettier-setup" className="section">
@@ -138,7 +114,7 @@ const PrettierSetupSection: FunctionComponent = () => {
         </div>
       </div>
       <div className="files-structure-button-wrapper">
-        <FilesStructureButton structure={filesStructure} />
+        <FilesStructureButton sectionIndex={SectionAbsoluteIndex.PRETTIER} />
       </div>
     </section>
   );

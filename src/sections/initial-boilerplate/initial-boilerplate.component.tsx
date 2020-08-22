@@ -10,6 +10,7 @@ import CodeSnippet, {
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
 import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
+import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';
 
 const indexHtmlCode = `<!DOCTYPE html>
 <html lang="en">
@@ -121,10 +122,7 @@ const InitialBoilerplateSection: FunctionComponent = () => {
       </div>
       <div className="files-structure-button-wrapper">
         <FilesStructureButton
-          structure={{
-            public: { 'index.html': 'html-file' },
-            src: { 'index.js': 'js-file' },
-          }}
+          sectionIndex={SectionAbsoluteIndex.INITAL_BOILERPLATE}
         />
       </div>
     </section>

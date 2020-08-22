@@ -1,11 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import './eslint-setup.styles.scss';
 import { useSelector } from 'react-redux';
-import {
-  selectNpm,
-  selectSass,
-  selectBabelrc,
-} from '../../redux/settings/settings.selectors';
+import { selectNpm } from '../../redux/settings/settings.selectors';
 import { Icon } from '@iconify/react';
 import webPackIcon from '@iconify/icons-simple-icons/eslint';
 import CliCommand from '../../components/cli-command/cli-command.component';
@@ -13,7 +9,7 @@ import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
 import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
-import { FilesStructureObject } from '../../redux/files-structure/files-structure.types';
+import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';
 
 const eslintrcCode = `{
   "parser": "babel-eslint",
@@ -43,28 +39,12 @@ const addEsLintLoaderToWebpackConfigCode = `{
 
 const EsLintSetupSection: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
-  const sass = useSelector(selectSass);
 
   const installDevLeadingText = `${
     npm ? 'npm install --save-dev' : 'yarn add --dev'
   }`;
 
   const installCommand = `${installDevLeadingText} babel-eslint eslint eslint-config-react eslint-loader eslint-plugin-react`;
-
-  const babelrc = useSelector(selectBabelrc);
-
-  const filesStructure: FilesStructureObject = {
-    public: { 'index.html': 'html-file' },
-    src: {
-      'index.js': 'js-file',
-      'app.js': 'js-file',
-      [`app.${sass ? 's' : ''}css`]: `${sass ? 's' : ''}css-file`,
-    },
-    '.babelrc': 'json-file',
-    'webpack.config.js': 'js-file',
-    '.eslintrc': 'json-file',
-  };
-  if (!babelrc) delete filesStructure['.babelrc'];
 
   return (
     <section id="eslint-setup" className="section">
@@ -145,7 +125,7 @@ const EsLintSetupSection: FunctionComponent = () => {
         </div>
       </div>
       <div className="files-structure-button-wrapper">
-        <FilesStructureButton structure={filesStructure} />
+        <FilesStructureButton sectionIndex={SectionAbsoluteIndex.ESLINT} />
       </div>
     </section>
   );
