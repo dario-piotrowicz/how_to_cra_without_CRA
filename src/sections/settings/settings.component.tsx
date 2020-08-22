@@ -38,22 +38,20 @@ const Settings: FunctionComponent = () => {
           <div className="switch-toggle">
             <button
               className={`${npm ? 'selected' : ''}`}
+              disabled={npm}
               onClick={() => {
-                if (!npm) {
-                  dispatch(setNpm(true));
-                  dispatch(setYarn(false));
-                }
+                dispatch(setNpm(true));
+                dispatch(setYarn(false));
               }}
             >
               npm
             </button>
             <button
               className={`${yarn ? 'selected' : ''}`}
+              disabled={yarn}
               onClick={() => {
-                if (!yarn) {
-                  dispatch(setYarn(true));
-                  dispatch(setNpm(false));
-                }
+                dispatch(setYarn(true));
+                dispatch(setNpm(false));
               }}
             >
               yarn
