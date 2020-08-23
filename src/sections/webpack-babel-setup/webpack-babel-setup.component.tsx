@@ -12,7 +12,7 @@ import {
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
-import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.component';
 import AdditionalInfoIcon from '../../components/additional-info-icon/additional-info-icon.component';
 import { setBabelrc } from '../../redux/settings/settings.actions';
 import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';

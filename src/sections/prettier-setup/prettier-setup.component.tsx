@@ -8,7 +8,7 @@ import { selectNpm } from '../../redux/settings/settings.selectors';
 import CodeSnippet, {
   CodeSnippetLanguage,
 } from '../../components/code-snippet/code-snippet.component';
-import FilesStructureButton from '../../components/files-structure-button/files-structure-button.compoent';
+import FilesStructureButton from '../../components/files-structure-button/files-structure-button.component';
 import { SectionAbsoluteIndex } from '../../redux/files-structure/files-structure.types';
 
 const prettierConfigCode = `{
