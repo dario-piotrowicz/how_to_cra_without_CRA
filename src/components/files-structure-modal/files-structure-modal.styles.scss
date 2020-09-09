@@ -78,12 +78,13 @@
       .title {
         padding: 1rem;
         text-align: center;
+        font-size: 1.3rem;
         @media (max-width: 950px) {
           padding: 0.5rem;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
         }
         @media (max-width: 800px) {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
       }
 
