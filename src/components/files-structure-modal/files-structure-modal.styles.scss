@@ -54,8 +54,8 @@
     border: 1px solid $color-dark-background;
     border-radius: 5px;
     z-index: 11;
-    width: 50%;
-    max-height: 70%;
+    width: 70%;
+    height: 85%;
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -129,11 +129,6 @@
         display: flex;
         justify-content: center;
       }
-    }
-
-    @media (max-width: 1300px) {
-      width: 70%;
-      max-height: 75%;
     }
   }
 }
