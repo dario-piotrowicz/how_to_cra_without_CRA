@@ -51,7 +51,7 @@ const PrettierSetupSection: FunctionComponent = () => {
         <CliCommand command={installCommand} />
         <p>
           And create a configuration file in the root directory called
-          <strong>.prettierrc</strong> containing the prettier rules we want in
+          <strong> .prettierrc</strong> containing the prettier rules we want in
           a single json object like:
         </p>
         <CodeSnippet code={prettierConfigCode} lang={CodeSnippetLanguage.JS} />
