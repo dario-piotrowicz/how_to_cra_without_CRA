@@ -17,7 +17,7 @@ const prettierConfigCode = `{
   "trailingComma": "es5"
 }`;
 
-const formatScriptCode = '"format": "prettier --write "src/**/*.(js|jsx)""';
+const formatScriptCode = `"format": "prettier --write 'src/**/*.(js|jsx)'"`;
 
 const PrettierSetupSection: FunctionComponent = () => {
   const npm = useSelector(selectNpm);
