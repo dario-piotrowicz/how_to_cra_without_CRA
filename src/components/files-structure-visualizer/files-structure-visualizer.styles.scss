@@ -12,17 +12,18 @@
 
     li {
       position: relative;
+      $x-displacement: 7em;
 
       &:not(.root) {
-        margin-left: 5em;
+        margin-left: $x-displacement;
 
         &::before {
           content: '';
           position: absolute;
           display: inline-block;
-          width: 5em;
+          width: $x-displacement;
           height: calc(2.5em + 5px);
-          margin-left: calc((5em - 1em) * -1);
+          margin-left: calc((#{$x-displacement} - 1em) * -1);
           margin-top: calc((2.5em / 2 * -1) - 4%);
           border-left: 1px solid black;
           border-bottom: 1px solid black;
@@ -36,7 +37,7 @@
         display: inline-block;
         width: 1px;
         height: 100%;
-        margin-left: calc((5em - 1em) * -1);
+        margin-left: calc((#{$x-displacement} - 1em) * -1);
         top: 0;
         border-left: 1px solid black;
       }
