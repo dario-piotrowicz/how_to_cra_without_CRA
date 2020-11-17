@@ -15,9 +15,11 @@
       $x-displacement--wide: 8em;
       $x-displacement--medium: 6em;
       $x-displacement--small: 4em;
+      $x-displacement--very-small: 2em;
 
       $mq-medium-breakpoint: 1000px;
       $mq-small-breakpoint: 830px;
+      $mq-very-small-breakpoint: 660px;
 
       &:not(.root) {
         margin-left: $x-displacement--wide;
@@ -25,9 +27,11 @@
         @media (max-width: $mq-medium-breakpoint) {
           margin-left: $x-displacement--medium;
         }
-
         @media (max-width: $mq-small-breakpoint) {
           margin-left: $x-displacement--small;
+        }
+        @media (max-width: $mq-very-small-breakpoint) {
+          margin-left: $x-displacement--very-small;
         }
 
         &::before {
@@ -49,6 +53,10 @@
             width: $x-displacement--small;
             margin-left: calc((#{$x-displacement--small} - 1em) * -1);
           }
+          @media (max-width: $mq-very-small-breakpoint) {
+            width: $x-displacement--very-small;
+            margin-left: calc((#{$x-displacement--very-small} - 1em) * -1);
+          }
         }
       }
 
@@ -66,6 +74,9 @@
         }
         @media (max-width: $mq-small-breakpoint) {
           margin-left: calc((#{$x-displacement--small} - 1em) * -1);
+        }
+        @media (max-width: $mq-very-small-breakpoint) {
+          margin-left: calc((#{$x-displacement--very-small} - 1em) * -1);
         }
       }
 
