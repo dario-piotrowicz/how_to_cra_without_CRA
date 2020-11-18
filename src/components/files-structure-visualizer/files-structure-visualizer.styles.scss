@@ -1,47 +1,90 @@
 .files-structure-visualizer {
-  font-size: 1.5rem;
-  min-width: 0;
-
-  @media (max-width: 950px) {
-    font-size: 1rem;
-  }
+  font-size: 1rem;
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
 
-    &:not(.root) {
-      margin-left: 3.3em;
-    }
-
     li {
       position: relative;
-      margin-top: 0.6em;
-      margin-left: -0.2em;
+      $x-displacement--wide: 8em;
+      $x-displacement--medium: 6em;
+      $x-displacement--small: 4em;
+      $x-displacement--very-small: 2em;
 
-      &:not(.root)::before {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        width: 2em;
-        height: 2.5em;
-        left: -2.2em;
-        top: -1.5em;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-bottom-left-radius: 5px;
+      $mq-medium-breakpoint: 1000px;
+      $mq-small-breakpoint: 830px;
+      $mq-very-small-breakpoint: 660px;
+      $mq-very-small-but-enlarged-breakpoint: 570px;
+
+      &:not(.root) {
+        margin-left: $x-displacement--wide;
+
+        @media (max-width: $mq-medium-breakpoint) {
+          margin-left: $x-displacement--medium;
+        }
+        @media (max-width: $mq-small-breakpoint) {
+          margin-left: $x-displacement--small;
+        }
+        @media (max-width: $mq-very-small-breakpoint) {
+          margin-left: $x-displacement--very-small;
+        }
+        @media (max-width: $mq-very-small-but-enlarged-breakpoint) {
+          margin-left: $x-displacement--small;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: $x-displacement--wide;
+          height: calc(2.5em + 5px);
+          margin-left: calc((#{$x-displacement--wide} - 1em) * -1);
+          margin-top: calc((2.5em / 2 * -1) - 4%);
+          border-left: 1px solid black;
+          border-bottom: 1px solid black;
+          border-bottom-left-radius: 5px;
+          @media (max-width: $mq-medium-breakpoint) {
+            width: $x-displacement--medium;
+            margin-left: calc((#{$x-displacement--medium} - 1em) * -1);
+          }
+          @media (max-width: $mq-small-breakpoint) {
+            width: $x-displacement--small;
+            margin-left: calc((#{$x-displacement--small} - 1em) * -1);
+          }
+          @media (max-width: $mq-very-small-breakpoint) {
+            width: $x-displacement--very-small;
+            margin-left: calc((#{$x-displacement--very-small} - 1em) * -1);
+          }
+          @media (max-width: $mq-very-small-but-enlarged-breakpoint) {
+            width: $x-displacement--small;
+            margin-left: calc((#{$x-displacement--small} - 1em) * -1);
+          }
+        }
       }
 
       &:not(:last-child)::after {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 2em;
+        width: 1px;
         height: 100%;
-        left: -2.2em;
-        top: -0.7em;
+        margin-left: calc((#{$x-displacement--wide} - 1em) * -1);
+        top: 0;
         border-left: 1px solid black;
+        @media (max-width: $mq-medium-breakpoint) {
+          margin-left: calc((#{$x-displacement--medium} - 1em) * -1);
+        }
+        @media (max-width: $mq-small-breakpoint) {
+          margin-left: calc((#{$x-displacement--small} - 1em) * -1);
+        }
+        @media (max-width: $mq-very-small-breakpoint) {
+          margin-left: calc((#{$x-displacement--very-small} - 1em) * -1);
+        }
+        @media (max-width: $mq-very-small-but-enlarged-breakpoint) {
+          margin-left: calc((#{$x-displacement--small} - 1em) * -1);
+        }
       }
 
       .icon-and-text-container {
